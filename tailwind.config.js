@@ -4,7 +4,14 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        socialbg: '#EDF1FF',
+      },
+      screens: {
+        'custom-991': '991px', // Custom breakpoint at 991px
+      },
+    },
   },
   plugins: [],
 }
