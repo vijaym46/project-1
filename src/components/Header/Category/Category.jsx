@@ -3,7 +3,10 @@ import Menu from './Menu';
 import { Link } from 'react-router-dom';
 import { categoryDropdown } from './CategoryItems';
 import { IoIosArrowDown } from 'react-icons/io';
-import Slide from './Slide';
+import carousel1 from '../../../assets/Carousel/slide1.jpg'
+import carousel2 from '../../../assets/Carousel/slide2.jpg'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 const Category = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -30,7 +33,8 @@ const Category = () => {
   }, []);
 
   return (
-    <nav className='flex items-center justify-normal px-5 sm:px-[2vw] md:px-[3vw] lg:px-[4vw]' ref={dropdownRef}>
+    <>
+    <nav className='flex px-5 sm:px-[2vw] md:px-[3vw] lg:px-[4vw]' ref={dropdownRef}>
       <div className="hidden relative custom-991:inline-block text-left" >
         
           <div>
@@ -67,6 +71,54 @@ const Category = () => {
 
       <Menu />
     </nav>
+          
+    <div className="w-full px-5 sm:px-[2vw] md:px-[3vw] pt-4 lg:px-[4vw] relative custom-991:hidden">
+      <Carousel
+        autoPlay
+        infiniteLoop
+        showThumbs={false}
+        showStatus={false}
+        className="relative"
+      >
+        <div className="h-[410px]">
+          <img
+            src={carousel1}
+            alt="St. Albans Digital Printing Inc"
+            className="object-cover w-full h-full"
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
+            <div className="p-3 max-w-lg text-center">
+              <h4 className="text-light text-uppercase font-weight-medium mb-3 text-white text-lg">
+                St. Albans Digital Printing Inc
+              </h4>
+              <a href="#" className="btn bg-white text-black py-2 px-3 rounded shadow">
+                Shop Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="h-[410px]">
+          <img
+            src={carousel2}
+            alt="Customized Web Banners"
+            className="object-cover w-full h-full"
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
+            <div className="p-3 max-w-lg text-center">
+              <h4 className="text-light text-uppercase font-weight-medium mb-3 text-white text-lg">
+                Customized Web Banners
+              </h4>
+              <a href="#" className="btn bg-white text-black py-2 px-3 rounded shadow">
+                Shop Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </Carousel>
+    </div>
+
+    </>
   );
 };
 

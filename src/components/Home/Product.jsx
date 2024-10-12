@@ -1,6 +1,16 @@
 import React from 'react'
 import offer1 from '../../assets/Offer/offer1.jpg'
 import offer2 from '../../assets/Offer/offer2.png'
+import product1 from '../../assets/Product/product1.jpg'
+import product2 from '../../assets/Product/product2.jpg'
+import product3 from '../../assets/Product/product3.jpg'
+import product4 from '../../assets/Product/product4.png'
+import product5 from '../../assets/Product/product5.jpg'
+import product6 from '../../assets/Product/product6.jpg'
+import product7 from '../../assets/Product/product7.jpg'
+import product8 from '../../assets/Product/product8.jpg'
+import { FaEye } from 'react-icons/fa'
+import { FaCartShopping } from 'react-icons/fa6'
 
 const Product = () => {
   return (
@@ -30,11 +40,135 @@ const Product = () => {
   </div>
 
 
-  {/* --- Product --- */}
-    <div className='pt-5'>
-        <div>
-            <h1>Popular Products</h1>
+  {/* --- Product --- */}   
+    <div className='py-5 flex flex-col items-center justify-center'>
+        <div className='flex items-center gap-2'>
+            <p className='w-8 md:w-11 h-[2px] bg-[#414141]'></p>
+            <h1 className='text-4xl font-semibold'>Popular Products</h1>
+            <p className='w-8 md:w-11 h-[2px] bg-[#414141]'></p>
         </div>
+
+        <div className='px-10 mt-8'>
+            <div className='grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4'>
+                <div className='border overflow-hidden'>
+                    <img src={product1} className="object-cover object-center w-full h-40 max-w-full mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110" alt="" />
+                    <h2 className='text-center my-6'>Post Cards</h2>
+                    <div className='px-4 py-3 flex items-center gap-4 justify-between border'>
+                        <div className='flex items-center gap-2'>
+                            <FaEye className='text-orange-300'/>
+                            <p className='text-sm'>View Detail</p>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <FaCartShopping className='text-orange-300'/>
+                            <p className='text-sm'>Add To Cart</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='border overflow-hidden'>
+                    <img src={product2} className="object-cover object-center w-full h-40 max-w-full mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110" alt="" />
+                    <h2 className='text-center my-6'>Post Cards</h2>
+                    <div className='px-4 py-3 flex items-center gap-4 justify-between border'>
+                        <div className='flex items-center gap-2'>
+                            <FaEye className='text-orange-300'/>
+                            <p className='text-sm'>View Detail</p>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <FaCartShopping className='text-orange-300'/>
+                            <p className='text-sm'>Add To Cart</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='border overflow-hidden'>
+                    <img src={product3} className="object-cover object-center w-full h-40 max-w-full mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110" alt="" />
+                    <h2 className='text-center my-6'>Post Cards</h2>
+                    <div className='px-4 py-3 flex items-center gap-4 justify-between border'>
+                        <div className='flex items-center gap-2'>
+                            <FaEye className='text-orange-300'/>
+                            <p className='text-sm'>View Detail</p>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <FaCartShopping className='text-orange-300'/>
+                            <p className='text-sm'>Add To Cart</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='border overflow-hidden'>
+                    <img src={product4} className="object-cover object-center w-full h-40 max-w-full mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110" alt="" />
+                    <h2 className='text-center my-6'>Post Cards</h2>
+                    <div className='px-4 py-3 flex items-center gap-4 justify-between border'>
+                        <div className='flex items-center gap-2'>
+                            <FaEye className='text-orange-300'/>
+                            <p className='text-sm'>View Detail</p>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <FaCartShopping className='text-orange-300'/>
+                            <p className='text-sm'>Add To Cart</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='border overflow-hidden'>
+                    <img src={product5} className="object-cover object-center w-full h-40 max-w-full mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110" alt="" />
+                    <h2 className='text-center my-6'>Post Cards</h2>
+                    <div className='px-4 py-3 flex items-center gap-4 justify-between border'>
+                        <div className='flex items-center gap-2'>
+                            <FaEye className='text-orange-300'/>
+                            <p className='text-sm'>View Detail</p>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <FaCartShopping className='text-orange-300'/>
+                            <p className='text-sm'>Add To Cart</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='border overflow-hidden'>
+                    <img src={product6} className="object-cover object-center w-full h-40 max-w-full mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110" alt="" />
+                    <h2 className='text-center my-6'>Post Cards</h2>
+                    <div className='px-4 py-3 flex items-center gap-4 justify-between border'>
+                        <div className='flex items-center gap-2'>
+                            <FaEye className='text-orange-300'/>
+                            <p className='text-sm'>View Detail</p>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <FaCartShopping className='text-orange-300'/>
+                            <p className='text-sm'>Add To Cart</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='border overflow-hidden'>
+                    <img src={product7} className="object-cover object-center w-full h-40 max-w-full mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110" alt="" />
+                    <h2 className='text-center my-6'>Post Cards</h2>
+                    <div className='px-4 py-3 flex items-center gap-4 justify-between border'>
+                        <div className='flex items-center gap-2'>
+                            <FaEye className='text-orange-300'/>
+                            <p className='text-sm'>View Detail</p>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <FaCartShopping className='text-orange-300'/>
+                            <p className='text-sm'>Add To Cart</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='border overflow-hidden'>
+                    <img src={product8} className="object-cover object-center w-full h-40 max-w-full mb-4 transition-transform duration-300 ease-in-out transform hover:scale-110" alt="" />
+                    <h2 className='text-center my-6'>Post Cards</h2>
+                    <div className='px-4 py-3 flex items-center gap-4 justify-between border'>
+                        <div className='flex items-center gap-2'>
+                            <FaEye className='text-orange-300'/>
+                            <p className='text-sm'>View Detail</p>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <FaCartShopping className='text-orange-300'/>
+                            <p className='text-sm'>Add To Cart</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    
     </div>
 
   </>

@@ -3,6 +3,10 @@ import { Link, NavLink } from 'react-router-dom';
 import { navItems } from './CategoryItems';
 import logo from '../../../assets/logo.svg'
 import Slide from './Slide';
+import carousel1 from '../../../assets/Carousel/slide1.jpg'
+import carousel2 from '../../../assets/Carousel/slide2.jpg'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +14,31 @@ const Menu = () => {
   return (
     <>
       {/* Desktop Menu */}
-      <div className='hidden custom-991:flex items-center justify-between pl-8 w-5/6 '>
+      <div>
+        <div className='hidden custom-991:flex items-center justify-between pl-8 py-4 w-full '>
+            <ul className='flex gap-8 text-sm text-gray-700'>
+              {navItems.map((item) => (
+                <NavLink key={item.id} to={item.path} className='flex flex-col items-center gap-1'>
+                  <p>{item.title}</p>
+                  <hr className='hidden w-2/4 border-none h-[1px] bg-gray-600'/>
+                </NavLink>
+              ))}
+            </ul>
+            <ul className='flex gap-8 text-grey-700'>
+              <NavLink to='/login'>
+                <p>Login</p>
+              </NavLink>
+              <NavLink to='/register'>
+                <p>Register</p>
+              </NavLink>
+            </ul>
+        </div>
+            <Slide/>
+      </div>
+
+
+      {/* <div className='hidden custom-991:flex items-center justify-between pl-8 w-5/6 '>
+        <div className='bg-slate-500'>
           <ul className='flex gap-8 text-sm text-gray-700'>
             {navItems.map((item) => (
               <NavLink key={item.id} to={item.path} className='flex flex-col items-center gap-1'>
@@ -19,6 +47,8 @@ const Menu = () => {
               </NavLink>
             ))}
           </ul>
+          <Slide/>
+        </div>
 
           <ul className='flex gap-8 text-grey-700'>
             <NavLink to='/login'>
@@ -28,7 +58,7 @@ const Menu = () => {
               <p>Register</p>
             </NavLink>
           </ul>
-      </div>
+      </div> */}
       
       
       <div className='w-full custom-991:hidden'>
@@ -90,9 +120,11 @@ const Menu = () => {
               </NavLink>
             </ul>
           </div>
+          
         </div>
+
       </div>
-      
+   
 
     </>
   );

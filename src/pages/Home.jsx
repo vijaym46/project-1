@@ -1,5 +1,4 @@
 import React from 'react'
-import Slide from '../components/Header/Category/Slide'
 import { SiAltiumdesigner } from 'react-icons/si'
 import { FaTools } from 'react-icons/fa'
 import { CgTemplate } from 'react-icons/cg'
@@ -9,9 +8,8 @@ import Product from '../components/Home/Product'
 const Home = () => {
   return (
     <div className='flex flex-col items-center justify-center'>
-      <Slide/>
 
-      {/* serives end */}
+      {/* serives start */}
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-6 px-10 py-5 md:py-10 mt-10 w-full'>
 
         <div className='flex items-center sm:justify-center border px-5 py-5 mb-5'>

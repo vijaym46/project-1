@@ -6,7 +6,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 const Slide = () => {
   return (
-    <div className="w-full custom-991:w-3/5 px-5 sm:px-[2vw] md:px-[3vw] lg:px-[4vw] relative custom-991:left-6">
+    <div className="w-full hidden custom-991:block pl-8 relative">
       <Carousel
         autoPlay
         infiniteLoop
@@ -53,5 +53,7 @@ const Slide = () => {
     </div>
   )
 }
+
+/* <div className="w-full custom-991:w-3/5 px-5 sm:px-[2vw] md:px-[3vw] lg:px-[4vw] relative custom-991:left-6"> */
 
 export default Slide
