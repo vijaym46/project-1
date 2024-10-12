@@ -3,6 +3,7 @@ import Menu from './Menu';
 import { Link } from 'react-router-dom';
 import { categoryDropdown } from './CategoryItems';
 import { IoIosArrowDown } from 'react-icons/io';
+import Slide from './Slide';
 
 const Category = () => {
   const [isOpen, setIsOpen] = useState(true);

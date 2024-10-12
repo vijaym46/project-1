@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { navItems } from './CategoryItems';
 import logo from '../../../assets/logo.svg'
+import Slide from './Slide';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,23 +11,23 @@ const Menu = () => {
     <>
       {/* Desktop Menu */}
       <div className='hidden custom-991:flex items-center justify-between pl-8 w-5/6 '>
-        <ul className='flex gap-8 text-sm text-gray-700'>
-          {navItems.map((item) => (
-            <NavLink key={item.id} to={item.path} className='flex flex-col items-center gap-1'>
-              <p>{item.title}</p>
-              <hr className='hidden w-2/4 border-none h-[1px] bg-gray-600'/>
-            </NavLink>
-          ))}
-        </ul>
+          <ul className='flex gap-8 text-sm text-gray-700'>
+            {navItems.map((item) => (
+              <NavLink key={item.id} to={item.path} className='flex flex-col items-center gap-1'>
+                <p>{item.title}</p>
+                <hr className='hidden w-2/4 border-none h-[1px] bg-gray-600'/>
+              </NavLink>
+            ))}
+          </ul>
 
-        <ul className='flex gap-8 text-grey-700'>
-          <NavLink to='/login'>
-            <p>Login</p>
-          </NavLink>
-          <NavLink to='/register'>
-            <p>Register</p>
-          </NavLink>
-        </ul>
+          <ul className='flex gap-8 text-grey-700'>
+            <NavLink to='/login'>
+              <p>Login</p>
+            </NavLink>
+            <NavLink to='/register'>
+              <p>Register</p>
+            </NavLink>
+          </ul>
       </div>
       
       

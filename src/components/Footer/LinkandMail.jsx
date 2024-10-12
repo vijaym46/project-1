@@ -13,7 +13,7 @@ const LinkandMail = () => {
             <div className='flex flex-col space-y-2'>
             {quicklink.map((link) => {
                 return (
-                <div className='flex items-center hover:underline'>
+                <div key={link.id} className='flex items-center hover:underline'>
                     <MdKeyboardArrowDown className='-rotate-90 mr-1 text-black'/>
                     <Link key={link.id} to={link.path} className='text-gray-700'>{link.title}</Link>
                 </div>
