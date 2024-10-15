@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Menu from './Menu';
 import { Link } from 'react-router-dom';
-import { categoryDropdown } from './CategoryItems';
+import { categoryDropdown } from './NavItems';
 import { IoIosArrowDown } from 'react-icons/io';
 import carousel1 from '../../../assets/Carousel/slide1.jpg'
 import carousel2 from '../../../assets/Carousel/slide2.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import NewMenu from './NewMenu';
 
 const Category = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -34,8 +35,8 @@ const Category = () => {
 
   return (
     <>
-    <nav className='flex px-5 sm:px-[2vw] md:px-[3vw] lg:px-[4vw]' ref={dropdownRef}>
-      <div className="hidden relative custom-991:inline-block text-left" >
+    <nav className='flex px-5 sm:px-[2vw] md:px-[2vw] lg:px-[3vw] bg-gray-100'>
+      <div className="hidden relative  text-left" ref={dropdownRef}>
         
           <div>
             <button
@@ -69,7 +70,7 @@ const Category = () => {
 
       </div>
 
-      <Menu />
+      <NewMenu />
     </nav>
           
     <div className="w-full px-5 sm:px-[2vw] md:px-[3vw] pt-4 lg:px-[4vw] relative custom-991:hidden">
@@ -91,9 +92,9 @@ const Category = () => {
               <h4 className="text-light text-uppercase font-weight-medium mb-3 text-white text-lg">
                 St. Albans Digital Printing Inc
               </h4>
-              <a href="#" className="btn bg-white text-black py-2 px-3 rounded shadow">
+              <Link to="/cards" className="btn bg-white text-black py-2 px-3 rounded shadow">
                 Shop Now
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -109,9 +110,9 @@ const Category = () => {
               <h4 className="text-light text-uppercase font-weight-medium mb-3 text-white text-lg">
                 Customized Web Banners
               </h4>
-              <a href="#" className="btn bg-white text-black py-2 px-3 rounded shadow">
+              <Link to="/cards" className="btn bg-white text-black py-2 px-3 rounded shadow">
                 Shop Now
-              </a>
+              </Link>
             </div>
           </div>
         </div>

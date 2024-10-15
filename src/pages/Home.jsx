@@ -4,10 +4,12 @@ import { FaTools } from 'react-icons/fa'
 import { CgTemplate } from 'react-icons/cg'
 import { RiAdvertisementLine } from 'react-icons/ri'
 import Product from '../components/Home/Product'
+import Slide from '../components/Header/Category/Slide'
 
 const Home = () => {
   return (
     <div className='flex flex-col items-center justify-center'>
+      <Slide />
 
       {/* serives start */}
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-6 px-10 py-5 md:py-10 mt-10 w-full'>

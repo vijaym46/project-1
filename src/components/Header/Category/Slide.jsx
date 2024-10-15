@@ -3,10 +3,11 @@ import carousel1 from '../../../assets/Carousel/slide1.jpg'
 import carousel2 from '../../../assets/Carousel/slide2.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import { Link } from 'react-router-dom';
 
 const Slide = () => {
   return (
-    <div className="w-full hidden custom-991:block pl-8 relative">
+    <div className="w-full block relative px-5 sm:px-[2vw] md:px-[2vw] lg:px-[3vw]">
       <Carousel
         autoPlay
         infiniteLoop
@@ -25,9 +26,9 @@ const Slide = () => {
               <h4 className="text-light text-uppercase font-weight-medium mb-3 text-white text-lg">
                 St. Albans Digital Printing Inc
               </h4>
-              <a href="#" className="btn bg-white text-black py-2 px-3 rounded shadow">
+              <Link to='/cards' className="btn bg-white text-black py-2 px-3 rounded shadow">
                 Shop Now
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -43,9 +44,9 @@ const Slide = () => {
               <h4 className="text-light text-uppercase font-weight-medium mb-3 text-white text-lg">
                 Customized Web Banners
               </h4>
-              <a href="#" className="btn bg-white text-black py-2 px-3 rounded shadow">
+              <Link to='/cards' className="btn bg-white text-black py-2 px-3 rounded shadow">
                 Shop Now
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -53,7 +54,5 @@ const Slide = () => {
     </div>
   )
 }
-
-/* <div className="w-full custom-991:w-3/5 px-5 sm:px-[2vw] md:px-[3vw] lg:px-[4vw] relative custom-991:left-6"> */
 
 export default Slide

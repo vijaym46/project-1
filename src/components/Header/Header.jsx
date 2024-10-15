@@ -1,12 +1,13 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Category from './Category/Category'
+import NewMenu from './Category/NewMenu'
 
 const Header = () => {
   return (
     <header>
         <Navbar />
-        <Category />
+        <NewMenu />
+        
     </header>
   )
 }

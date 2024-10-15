@@ -20,4 +20,10 @@
 a.active hr {
     display: block;
 }
+
+@layer components {
+    .sub-menu {
+        @apply absolute p-[15px] rounded-[6px]  origin-[50%_-170px] text-black backdrop-blur bg-white shadow-2xl z-50;
+    }
+}
   

@@ -5,13 +5,16 @@ import { FaXTwitter } from 'react-icons/fa6';
 
 const SocialMedia = () => {
   return (
-    <div className='flex items-center justify-center md:justify-between py-2 px-4 sm:px-[1vw] md:px-[3vw] lg:px-[5vw] bg-socialbg'>
+    <div className='flex items-center justify-between py-2 px-6 sm:px-[2vw] md:px-[3vw] lg:px-[5vw] bg-socialbg'>
         <div className='hidden md:block'>
             <Link className='font-light text-gray-800'>FAQs</Link>
             <span className='font-light px-2'>|</span>
             <Link className='font-light text-gray-800'>Help</Link>
             <span className='font-light px-2'>|</span>
             <Link className='font-light text-gray-800'>Support</Link>
+        </div>
+        <div>
+            <p>718-528-5100</p>
         </div>
         <div className='flex items-center justify-center'>
             <a className="text-dark px-2" href="https://www.facebook.com/stalbansdigitalprinting" target='blank'>

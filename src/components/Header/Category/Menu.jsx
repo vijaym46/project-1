@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { navItems } from './CategoryItems';
+import { navItems } from './NavItems';
 import logo from '../../../assets/logo.svg'
 import Slide from './Slide';
-import carousel1 from '../../../assets/Carousel/slide1.jpg'
-import carousel2 from '../../../assets/Carousel/slide2.jpg'
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,21 +11,49 @@ const Menu = () => {
   return (
     <>
       {/* Desktop Menu */}
-      <div>
-        <div className='hidden custom-991:flex items-center justify-between pl-8 py-4 w-full '>
-            <ul className='flex gap-8 text-sm text-gray-700'>
-              {navItems.map((item) => (
-                <NavLink key={item.id} to={item.path} className='flex flex-col items-center gap-1'>
-                  <p>{item.title}</p>
-                  <hr className='hidden w-2/4 border-none h-[1px] bg-gray-600'/>
+      <div >
+        <div className='hidden custom-991:flex items-center justify-between w-full '>
+            <ul className='flex text-sm text-gray-700'>
+              {navItems.map((item) => {
+                const hasSubMenu = item?.submenu?.length > 0
+
+              return (
+                <div key={item.id} className='relative'> {/* qq */}
+                <NavLink key={item.id} to={item.path} className='group flex relative flex-col items-center py-4 px-[1vw] gap-y-1 hover:bg-[#231f20] hover:text-white'>
+                  <div className='flex items-center gap-x-1'>
+                    <p className='font-medium text-base'>{item.title}</p>
+                    {hasSubMenu && (<IoIosArrowDown className='text-orange-500 group-hover:rotate-180 duration-200'/>)}
+                  </div>
+                  <hr className='hidden w-2/4 border-none h-[1px] bg-gray-600 group-hover:bg-white'/>
                 </NavLink>
-              ))}
+
+                  {hasSubMenu && (
+                    <div className='sub-menu w-[250%]'>
+                      <div className='grid gap-4 grid-cols-3'>
+
+                        { hasSubMenu && 
+                          item?.submenu?.map((submenu, i) => (
+                            <div key={i} className='relative'>
+
+                              <div to={submenu.path} className='bg-white/5 w-fit p-2 rounded-md whitespace-nowrap hover:bg-white hover:text-black duration-300'>
+                                <Link>{submenu.title}</Link>
+                              </div>
+                              
+                            </div>
+                          ))
+                        } 
+                      </div> 
+                    </div>
+                  )}
+                </div> /* qq */
+                );
+              })}
             </ul>
-            <ul className='flex gap-8 text-grey-700'>
-              <NavLink to='/login'>
+            <ul className='flex text-gray-700'>
+              <NavLink to='/login' className='hover:bg-[#231f20] pt-3 pb-4 px-[1vw] font-medium hover:text-white'>
                 <p>Login</p>
               </NavLink>
-              <NavLink to='/register'>
+              <NavLink to='/register' className='hover:bg-[#231f20] pt-3 pb-4 px-[1vw] font-medium hover:text-white'>
                 <p>Register</p>
               </NavLink>
             </ul>
@@ -36,31 +61,66 @@ const Menu = () => {
             <Slide/>
       </div>
 
+      
+    {/*       {navItems.map((item) => {
+      const hasSubMenu = item?.submenu?.length > 0;
 
-      {/* <div className='hidden custom-991:flex items-center justify-between pl-8 w-5/6 '>
-        <div className='bg-slate-500'>
-          <ul className='flex gap-8 text-sm text-gray-700'>
-            {navItems.map((item) => (
-              <NavLink key={item.id} to={item.path} className='flex flex-col items-center gap-1'>
-                <p>{item.title}</p>
-                <hr className='hidden w-2/4 border-none h-[1px] bg-gray-600'/>
-              </NavLink>
-            ))}
-          </ul>
-          <Slide/>
+      return (
+        <div key={item.id} className='relative'>
+          <NavLink
+            to={item.path}
+            className='group flex relative flex-col items-center py-4 px-[1vw] gap-y-1 hover:bg-[#231f20] hover:text-white'
+          >
+            <div className='flex items-center gap-x-1'>
+              <p className='font-medium text-base'>{item.title}</p>
+              {hasSubMenu && (
+                <IoIosArrowDown className='text-orange-500 group-hover:rotate-180 duration-200' />
+              )}
+            </div>
+            <hr className='hidden w-2/4 border-none h-[1px] bg-gray-600 group-hover:bg-white' />
+          </NavLink>
+          
+          {hasSubMenu && (
+            <div className='sub-menu'>
+              <div className='grid gap-4 grid-cols-3'>
+                {item.submenu.map((submenu, i) => (
+                  <div key={i} className='relative'>
+                    <Link
+                      to={submenu.path}
+                      className='bg-white/5 w-fit p-2 rounded-md whitespace-nowrap hover:bg-white hover:text-black duration-300'
+                    >
+                      {submenu.title}
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
+      );
+    })}
+ */}
 
-          <ul className='flex gap-8 text-grey-700'>
-            <NavLink to='/login'>
-              <p>Login</p>
-            </NavLink>
-            <NavLink to='/register'>
-              <p>Register</p>
-            </NavLink>
-          </ul>
-      </div> */}
-      
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* --- Mobile Menu --- */}
       <div className='w-full custom-991:hidden'>
         <div className='flex justify-between  w-full my-2'>
           <Link to="/" className='block'>
@@ -103,7 +163,7 @@ const Menu = () => {
               ))}
             </ul>
 
-            <ul className="flex flex-col mt-3 gap-3 text-sm text-grey-700">
+            <ul className="flex flex-col mt-3 gap-3 text-sm text-gray-700">
               <NavLink
                 to="/login"
                 className="hover:text-orange-300"
