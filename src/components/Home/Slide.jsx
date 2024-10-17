@@ -1,6 +1,6 @@
 import React from 'react'
-import carousel1 from '../../../assets/Carousel/slide1.jpg'
-import carousel2 from '../../../assets/Carousel/slide2.jpg'
+import carousel1 from '../../assets/Carousel/slide1.jpg'
+import carousel2 from '../../assets/Carousel/slide2.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';

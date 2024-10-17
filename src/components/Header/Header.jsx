@@ -1,13 +1,12 @@
 import React from 'react'
 import Navbar from './Navbar'
-import NewMenu from './Category/NewMenu'
+import DesktopMenu from './Category/DesktopMenu'
 
 const Header = () => {
   return (
     <header>
         <Navbar />
-        <NewMenu />
-        
+        <DesktopMenu/>      
     </header>
   )
 }

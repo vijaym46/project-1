@@ -43,9 +43,14 @@ const NewMenu = () => {
               key={item.id} 
               className='group/link'
             >
-              <Link to={item.path} className='flex items-center gap-1 px-[1vw] py-4 rounded-lg hover:bg-black/5'>
-                {item.title}
-                {hasSubMenu && <IoIosArrowDown className='mt-[0.6px] group-hover/link:rotate-180 duration-200 text-orange-400'/>}
+              <Link to={item.path} className='SelectedOne group flex items-center gap-1 px-[1vw] py-4 hover:bg-black hover:text-white'>
+                <div className='flex flex-col items-center gap-1'>
+                  {item.title}
+                  <hr className='opacity-0 w-2/4 activeLine border-none h-[1px] bg-gray-600 group-hover:bg-white'/>
+                </div>
+                <div className='flex justify-center'>
+                  {hasSubMenu && <IoIosArrowDown className='group-hover/link:rotate-180 duration-200 text-orange-400'/>}
+                </div>
               </Link>
               {hasSubMenu && (
                 <motion.div 
@@ -76,10 +81,10 @@ const NewMenu = () => {
         })}
       </ul>
       <ul className='flex text-gray-700'>
-        <NavLink to='/login' className='hover:bg-[#231f20] pt-3 pb-4 px-[1vw] font-medium hover:text-white'>
+        <NavLink to='/login' className='hover:bg-black pt-3 pb-4 px-[1vw] font-medium hover:text-white'>
           <p>Login</p>
         </NavLink>
-        <NavLink to='/register' className='hover:bg-[#231f20] pt-3 pb-4 px-[1vw] font-medium hover:text-white'>
+        <NavLink to='/register' className='hover:bg-black pt-3 pb-4 px-[1vw] font-medium hover:text-white'>
           <p>Register</p>
         </NavLink>
       </ul>

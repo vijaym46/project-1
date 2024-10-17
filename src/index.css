@@ -17,8 +17,16 @@
     font-style: normal;
 }
 
-a.active hr {
-    display: block;
+.SelectedOne:active hr,
+.SelectedOne:hover hr,
+.SelectedOne:focus hr {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+hr {
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
 @layer components {

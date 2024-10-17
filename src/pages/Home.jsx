@@ -4,7 +4,7 @@ import { FaTools } from 'react-icons/fa'
 import { CgTemplate } from 'react-icons/cg'
 import { RiAdvertisementLine } from 'react-icons/ri'
 import Product from '../components/Home/Product'
-import Slide from '../components/Header/Category/Slide'
+import Slide from '../components/Home/Slide'
 
 const Home = () => {
   return (
