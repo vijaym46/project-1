@@ -27,7 +27,7 @@ const LinkandMail = () => {
             <form>
                 <input type="text" className='border-0 py-4 px-3 mb-4 w-full' placeholder='Your Name' required/>
                 <input type="text" className='border-0 py-4 px-3 mb-4 w-full' placeholder='Your Email' required/>
-                <button className='bg-orange-200 hover:bg-orange-300 transition-all duration-400 py-3 w-full'>
+                <button className='bg-white hover:bg-orange-300 transition-all duration-400 py-3 w-full'>
                     Subscribe Now
                 </button>
             </form>

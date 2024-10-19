@@ -44,7 +44,7 @@ const Product = () => {
     <div className='py-5 flex flex-col items-center justify-center'>
         <div className='flex items-center gap-2'>
             <p className='w-8 md:w-11 h-[2px] bg-[#414141]'></p>
-            <h1 className='text-4xl font-semibold'>Popular Products</h1>
+            <h1 className='text-2xl sm:text-4xl font-semibold'>Popular Products</h1>
             <p className='w-8 md:w-11 h-[2px] bg-[#414141]'></p>
         </div>
 

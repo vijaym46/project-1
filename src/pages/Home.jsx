@@ -41,7 +41,7 @@ const Home = () => {
         and marketing needs</p>
         <p className='text-[#6F6F6F] text-lg leading-relaxed mb-6'>A dependable printing company that manages prints, business cards, brochures, brands, and custom items is invaluable in the fast-paced world of business. We are aware of how crucial it is to have premium print materials from online printing services, like brochures and business cards, to distinguish your brand and prints. A lasting impression on your audience may be made with high-quality printing on anything from business cards to banners, brochures, postcards, posters, and prints.</p>
       </div>
-      {/* Para */}
+      {/* Para end*/}
 
 
       <Product/>

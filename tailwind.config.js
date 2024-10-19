@@ -9,7 +9,7 @@ module.exports = {
         socialbg: '#EDF1FF',
       },
       screens: {
-        'custom-991': '991px', // Custom breakpoint at 991px
+        'custom-991': '1024px', // Custom breakpoint at 991px
       },
     },
   },
