@@ -4,9 +4,10 @@ import product2 from '../assets/Product/product2.jpg';
 import product3 from '../assets/Product/product3.jpg';
 import product4 from '../assets/Product/product4.png';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-import { div } from 'framer-motion/client';
-import { FaRegStar, FaShoppingCart, FaStar } from 'react-icons/fa';
-import { FaRegStarHalfStroke } from 'react-icons/fa6';
+import { FaFacebookF, FaLinkedinIn, FaPinterest, FaRegStar, FaShoppingCart, FaStar } from 'react-icons/fa';
+import { FaRegStarHalfStroke, FaXTwitter } from 'react-icons/fa6';
+import DescriReview from '../components/Cards/DescriReview';
+import ProductSlide from '../components/Cards/ProductSlide';
 
 const Cards = () => {
   const slides = [product1, product2, product3, product4];
@@ -65,8 +66,9 @@ const Cards = () => {
 
   return (
     /* form start */
-    <section className='grid grid-cols-1 justify-center items-center custom-991:grid-cols-2 py-6'>
-      <div className='max-w-[450px] sm:max-w-[500px] h-[400px] sm:h-[600px] w-full m-auto border py-6 px-4 relative group'>
+    <div>
+    <section className='grid grid-cols-1 custom-991:grid-cols-2 w-full justify-center items-center py-6'>
+      <div className='max-w-[450px] sm:max-w-[500px] h-[400px] sm:h-[600px] w-full m-auto sm:border py-6 px-4 relative group'>
         <div
           style={{ backgroundImage: `url(${slides[currentIndex]})` }}
           className='w-full h-full bg-center bg-cover duration-500'
@@ -88,23 +90,23 @@ const Cards = () => {
           <BsChevronCompactRight size={30} />
         </div>
       </div>
-      <div className='flex custom-991:block items-center justify-center'>
+
+      <div className='flex custom-991:block items-center px-4 justify-center'>
         <div className='max-w-[380px] sm:max-w-[500px] flex flex-col items-center justify-center w-full py-6'>
           <div className='flex w-full flex-col gap-3'>
-            <h1 className='text-3xl font-semibold'>Book Marks</h1>
+            <h1 className='text-2xl sm:text-3xl font-semibold'>Book Marks</h1>
             <div className='flex text-orange-400 gap-1'><FaStar /> <FaStar /> <FaStar /> <FaRegStarHalfStroke /> <FaRegStar /></div>
-            <h2 className='text-2xl font-semibold py-2'>$10.00-150.00</h2>
-            <p className='text-gray-500 text-lg'>Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea.</p>
+            <h2 className='text-xl sm:text-2xl font-semibold py-2'>$10.00-150.00</h2>
+            <p className='text-gray-500 text-base sm:text-lg'>Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea.</p>
           </div>
-        <div className="w-full py-6 bg-white rounded-lg">
+        <div className="w-full py-6">
           <form>
           {/* Paper Type */}
-            <div className="form-group flex items-center justify-center mb-4">
+            <div className="flex items-center justify-center mb-4">
               <label htmlFor="paperType" className="block  w-[150px] text-left mr-5 text-gray-500 whitespace-nowrap font-semibold mb-2">
                 Paper Type:
               </label>
               <select
-                id="paperType"
                 name="paperType"
                 value={formData.paperType}
                 onChange={handleChange}
@@ -116,12 +118,11 @@ const Cards = () => {
             </div>
 
           {/* Size */}
-          <div className="form-group flex items-center justify-center mb-4">
+          <div className="flex items-center justify-center mb-4">
             <label htmlFor="size" className="block w-[150px] text-left mr-5 text-gray-500 font-semibold mb-2">
               Size:
             </label>
             <select
-              id="size"
               name="size"
               value={formData.size}
               onChange={handleChange}
@@ -133,12 +134,11 @@ const Cards = () => {
           </div>
 
           {/* Quantity */}
-          <div className="form-group flex items-center justify-center mb-4">
+          <div className="flex items-center justify-center mb-4">
             <label htmlFor="quantity" className="block w-[150px] text-left mr-5 text-gray-500 font-semibold mb-2">
               Quantity: 
             </label>
             <select
-              id="quantity"
               name="quantity"
               value={formData.quantity}
               onChange={handleChange}
@@ -152,8 +152,8 @@ const Cards = () => {
           </div>
 
           {/* Tassel Color */}
-          <div className="form-group flex items-center justify-center mb-4">
-            <label htmlFor="tasselColor" className="block  w-[150px] text-left mr-5 text-gray-500 whitespace-nowrap font-semibold mb-2">
+          <div className="flex items-center justify-center mb-4">
+            <label htmlFor="tasselColor" className="block w-[150px] text-left mr-5 text-gray-500 whitespace-nowrap font-semibold mb-2">
               Tassel Color:
             </label>
             <select
@@ -171,8 +171,8 @@ const Cards = () => {
           </div>
 
           {/* Total Price */}
-          <p className="total-price text-lg font-bold text-gray-700 mb-4">
-            Total Price: $<span id="totalPrice">{totalPrice}</span>
+          <p className="text-lg font-bold text-gray-700 mb-4">
+            Total Price: $<span>{totalPrice}</span>
           </p>
           </form>
 
@@ -181,11 +181,35 @@ const Cards = () => {
             <FaShoppingCart /> Add To Cart
             </button>
           </div>
+
+          {/* Share Social media */}
+          <div className='flex items-center pt-2'>
+            <p className='font-light'>Share on:</p>
+            <div className='flex pl-2 items-center gap-x-2'>
+              <a href="#"><FaFacebookF /></a>
+              <a href="#"><FaXTwitter /></a>
+              <a href="#"><FaLinkedinIn /></a>
+              <a href="#"><FaPinterest /></a>       
+            </div>
+          </div>
+
       </div>
         </div>
       </div>
     </section>
-    /* form end */
+    {/* form end */}
+
+      <DescriReview />
+      <div>
+        <div className='flex gap-3 items-center justify-center'>
+          <p className='w-10 h-[1.5px] bg-black'></p>
+          <h1 className='text-3xl font-semibold'>You May Also Like</h1>
+          <p className='w-10 h-[1.5px] bg-black'></p>
+        </div>
+        <ProductSlide />
+      </div>
+
+    </div>
   );
 };
 

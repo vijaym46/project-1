@@ -83,11 +83,11 @@ const NewMenu = () => {
           })}
         </ul>
         <ul className='flex text-gray-700'>
-          <NavLink to='/login' className='hover:bg-black pt-3 pb-4 px-[1vw] font-medium hover:text-white'>
-            <p>Login</p>
+          <NavLink to='/login' className='hover:bg-orange-200 pt-3 pb-4 px-[1vw] font-medium'>
+            <p className='mt-1'>Login</p>
           </NavLink>
-          <NavLink to='/register' className='hover:bg-black pt-3 pb-4 px-[1vw] font-medium hover:text-white'>
-            <p>Register</p>
+          <NavLink to='/register' className='hover:bg-orange-200 pt-3 pb-4 px-[1vw] font-medium'>
+            <p className='mt-1'>Register</p>
           </NavLink>
         </ul>
       </nav>

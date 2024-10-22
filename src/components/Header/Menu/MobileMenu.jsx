@@ -53,8 +53,10 @@ const MobileMenu = () => {
 
               return(
                 <li key={id} className='w-11/12'>
-                  <Link className='flex font-semibold items-center justify-between p-4 hover:bg-black/5 rounded-md relative'
-                  onClick={() => setClicked(isClicked ? null : i)}>
+                  <Link 
+                    className='flex font-semibold items-center justify-between p-4 hover:bg-black/5 rounded-md    relative'
+                    onClick={() => setClicked(isClicked ? null : i)}
+                  >
                     {title}
                     {hasSubMenu && (
                       <IoIosArrowDown 

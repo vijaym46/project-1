@@ -12,22 +12,56 @@ const Home = () => {
       <Slide />
 
       {/* serives start */}
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-6 px-10 py-5 md:py-10 mt-10 w-full'>
+      <div className='grid sm:hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 py-5 px-8 md:py-10 mt-10 w-full'>
 
-        <div className='flex items-center sm:justify-center border px-5 py-5 mb-5'>
-          <SiAltiumdesigner className='text-2xl text-orange-300 sm:text-3xl md:text-6xl mr-2' />
+        <div className='flex items-center sm:justify-center border pl-5 sm:pl-0 sm:px-10 py-5 mb-5'>
+          <div className='w-12 sm:w-16'>
+            <SiAltiumdesigner className='text-4xl text-orange-300 sm:text-4xl md:text-6xl ' />
+          </div>
+          <p className='text-xl font-bold text-gray-600'>Free Online Designing</p>
+        </div>
+
+        <div className='flex items-center sm:justify-center border pl-5 sm:pl-0 py-5 mb-5'>
+          <div className='w-12 sm:w-24'>
+            <CgTemplate className='text-3xl text-orange-300  sm:text-4xl md:text-6xl '/>
+          </div>
+          <p className='text-xl font-bold text-gray-600'>Free Designing Templates</p>
+        </div>
+
+        <div className='flex items-center sm:justify-center border pl-5 sm:pl-0 py-5 mb-5'>
+          <div className='w-12 sm:w-24'>
+            <FaTools className='text-3xl text-orange-300 sm:text-4xl md:text-6xl '/>
+          </div>
+          <p className='text-xl font-bold text-gray-600'>Free Tools and Resources</p>
+        </div>
+
+        <div className='flex items-center sm:justify-center border pl-5 sm:pl-0 py-5 mb-5'>
+          <div className='w-12 sm:w-24'>
+            <RiAdvertisementLine className='text-3xl text-orange-300 sm:text-4xl md:text-6xl '/>
+          </div>
+          <p className='text-xl font-bold text-gray-600'>Free Bussiness Promo</p>
+        </div>
+      </div>
+        
+        
+        
+        
+      <div className='hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 py-5 px-8 md:py-10 mt-10 w-full'>
+
+        <div className='hidden sm:flex items-center sm:justify-center border px-5 py-5 mb-5'>
+          <SiAltiumdesigner className='text-4xl text-orange-300 sm:text-4xl md:text-6xl mr-2' />
           <p className='text-xl font-bold text-gray-600'>Free Online Designing</p>
         </div>
         <div className='flex items-center sm:justify-center border px-5 py-5 mb-5'>
-          <CgTemplate className='text-2xl text-orange-300  sm:text-3xl md:text-6xl mr-3'/>
+          <CgTemplate className='text-3xl text-orange-300  sm:text-4xl md:text-6xl mr-3'/>
           <p className='text-xl font-bold text-gray-600'>Free Designing Templates</p>
         </div>
-        <div className='flex items-center sm:justify-center border px-5 py-5 mb-5'> 
-          <FaTools className='text-2xl text-orange-300 sm:text-3xl md:text-6xl mr-4'/>
+        <div className='flex items-center sm:justify-center border px-5 py-5 mb-5'>
+          <FaTools className='text-3xl text-orange-300 sm:text-4xl md:text-6xl mr-5'/>
           <p className='text-xl font-bold text-gray-600'>Free Tools and Resources</p>
         </div>
         <div className='flex items-center sm:justify-center border px-5 py-5 mb-5'>
-          <RiAdvertisementLine className='text-2xl text-orange-300 sm:text-3xl md:text-6xl mr-3'/>
+          <RiAdvertisementLine className='text-3xl text-orange-300 sm:text-4xl md:text-6xl mr-4'/>
           <p className='text-xl font-bold text-gray-600'>Free Bussiness Promo</p>
         </div>
 
