@@ -32,7 +32,7 @@ const NewMenu = () => {
   }
 
   return (
-    <div className=' w-full px-5 sm:px-[3vw] bg-gray-100'>
+    <div className=' w-full px-5 sm:px-[3vw]'>
       <nav className='hidden custom-991:flex justify-between '>
         <ul className='flex'>
           {navItems.map((item, index) => {

@@ -5,9 +5,14 @@ export const navItems = [
         path: '/'
     },
     {
+        id: 5,
+        title: 'Shop',
+        path: '/shop'
+    },
+    {
         id: 2,
-        title: 'Cards',
-        path: '/cards'
+        title: 'ShopDetails',
+        path: '/shopdetails'
     },
     {
         id:3,
@@ -96,11 +101,6 @@ export const navItems = [
                 path: '/website-designing'
             },
         ]
-    },
-    {
-        id: 5,
-        title: 'Event Journal',
-        path: '/event-journal'
     },
     {
         id: 6,

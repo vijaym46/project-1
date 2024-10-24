@@ -67,24 +67,19 @@ const DescriReview = () => {
           )}
 
           {activeTab === "tab3" && (
-            <div className="tab-pane">
+            <div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-neutral-500">
                 <div>
                   <h4 className="text-black text-2xl mb-4">1 review for "Colorful Stylish Shirt"</h4>
                   <div className="flex mb-4">
-                    {/* <img
-                      src="img/user.jpg"
-                      alt="Image"
-                      className="w-12 h-12 rounded-full mr-3"
-                    /> */}
-                    <CgProfile className='w-12 h-12 rounded-full mr-3'/>
+                      <CgProfile className='w-12 h-12 rounded-full mr-3'/>
                     <div>
                       <h6>
                         John Doe
                         <small> - <i>01 Jan 2045</i></small>
                       </h6>
                       <div className="flex items-center text-orange-400 mb-2">
-                      <FaStar /> <FaStar /> <FaStar /> <FaRegStarHalfStroke /> <FaRegStar />
+                        <FaStar /> <FaStar /> <FaStar /> <FaRegStarHalfStroke /> <FaRegStar />
                       </div>
                       <p>
                         Diam amet duo labore stet elitr ea clita ipsum, tempor
