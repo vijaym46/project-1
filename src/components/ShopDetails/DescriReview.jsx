@@ -15,19 +15,19 @@ const DescriReview = () => {
         {/* Button start */}
         <div className="flex justify-center border-b mb-4">
           <button
-            className={`hover:text-orange-400 duration-200 py-2 px-4 ${activeTab === "tab1" ? "border-t border-l border-r text-orange-400" : ""}`}
+            className={`hover:text-orange-400 duration-200 py-2 px-4 border-t border-l border-r border-transparent ${activeTab === "tab1" ? "text-orange-400 border-neutral-200" : ""}`}
             onClick={() => setActiveTab("tab1")}
           >
             Description
           </button>
           <button
-            className={`hover:text-orange-400 duration-200 py-2 px-4 ${activeTab === "tab2" ? "border-t border-l border-r text-orange-400" : ""}`}
+            className={`hover:text-orange-400 duration-200 py-2 px-4 border-t border-l border-r border-transparent ${activeTab === "tab2" ? "text-orange-400 border-neutral-200" : ""}`}
             onClick={() => setActiveTab("tab2")}
           >
             Information
           </button>
           <button
-            className={`hover:text-orange-400 duration-200 py-2 px-4 ${activeTab === "tab3" ? "border-t border-l border-r text-orange-400" : ""}`}
+            className={`hover:text-orange-400 duration-200 py-2 px-4 border-t border-l border-r border-transparent ${activeTab === "tab3" ? "text-orange-400 border-neutral-200" : ""}`}
             onClick={() => setActiveTab("tab3")}
           >
             Reviews (0)

@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import MobileMenu from './MobileMenu';
 
 const NewMenu = () => {
+  const [horizLine, setHorizLine] = useState(null);
+
   const [hoverIndex, setHoverIndex] = useState(null);
 
   const toggleHoverMenu = (index) => {
@@ -45,10 +47,10 @@ const NewMenu = () => {
                 key={item.id} 
                 className='group/link'
               >
-                <Link to={item.path} className='SelectedOne group flex items-center gap-[2px] px-[1vw] duration-200 py-4 hover:bg-orange-200'>
+                <Link to={item.path} onClick={() => setHorizLine(index)} className='SelectedOne group flex items-center gap-[2px] px-[1vw] duration-200 py-4 hover:bg-orange-200'>
                   <div className='flex flex-col whitespace-nowrap items-center gap-1'>
                     {item.title}
-                    <hr className='opacity-0 w-2/4 activeLine border-none h-[1px] bg-gray-600'/>
+                    <hr className={`${horizLine === index ? 'opacity-100' : 'opacity-0'} w-2/4 activeLine border-none h-[1px] bg-gray-600`}/>
                   </div>
                   <div className='flex justify-center'>
                     {hasSubMenu && <IoIosArrowDown className='group-hover/link:rotate-180 duration-200 text-black'/>}
