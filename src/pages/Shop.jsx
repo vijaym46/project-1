@@ -6,6 +6,7 @@ import product1 from '../assets/Product/product1.jpg'
 import product2 from '../assets/Product/product2.jpg'
 import { FaCartArrowDown, FaEye } from 'react-icons/fa'
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md';
+import { h1 } from 'framer-motion/client';
 
 const Shop = () => {
   const printingServices = [ 'Banners', 'Bookmarks', 'Book Printing', 'Brochures', 'Business Cards', 'Buttons', 'Calendars', 'Car Magnets', 'Canvas Printing & Giclee', 'Customized Greeting Cards', 'E-Journal', 'Event Journal', 'Flyers', 'Funeral Buttons', 'Journals', 'Logo Designing' ]

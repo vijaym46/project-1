@@ -44,7 +44,7 @@ const NewMenu = () => {
               <motion.li 
                 onHoverStart={() => toggleHoverMenu(index)}
                 onHoverEnd={() => toggleHoverMenu(null)}
-                key={item.id} 
+                key={item.id}
                 className='group/link'
               >
                 <Link to={item.path} onClick={() => setHorizLine(index)} className='SelectedOne group flex items-center gap-[2px] px-[1vw] duration-200 py-4 hover:bg-orange-200'>

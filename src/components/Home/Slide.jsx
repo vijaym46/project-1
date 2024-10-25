@@ -4,7 +4,6 @@ import carousel2 from '../../assets/Carousel/St Albans Banner 02.jpg'
 import carousel3 from '../../assets/Carousel/St Albans Banner 03.png'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import { Link } from 'react-router-dom';
 
 const Slide = () => {
   return (
@@ -14,6 +13,8 @@ const Slide = () => {
         infiniteLoop
         showThumbs={false}
         showStatus={false}
+        interval={3000}
+        transitionTime={1000}
         className="relative"
       >
         <div className="h-[410px]">
@@ -22,16 +23,6 @@ const Slide = () => {
             alt="St. Albans Digital Printing Inc"
             className="object-cover w-full h-full"
           />
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
-            <div className="p-3 max-w-lg text-center">
-              <h4 className="text-light text-uppercase font-weight-medium mb-3 text-white text-lg">
-                St. Albans Digital Printing Inc
-              </h4>
-              <Link to='/cards' className="btn bg-white text-black py-2 px-3 rounded shadow">
-                Shop Now
-              </Link>
-            </div>
-          </div>
         </div>
 
         <div className="h-[410px]">
@@ -40,16 +31,6 @@ const Slide = () => {
             alt="Customized Web Banners"
             className="object-cover w-full h-full"
           />
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
-            <div className="p-3 max-w-lg text-center">
-              <h4 className="text-light text-uppercase font-weight-medium mb-3 text-white text-lg">
-                Customized Web Banners
-              </h4>
-              <Link to='/cards' className="btn bg-white text-black py-2 px-3 rounded shadow">
-                Shop Now
-              </Link>
-            </div>
-          </div>
         </div>
 
         <div className="h-[410px]">
@@ -58,16 +39,6 @@ const Slide = () => {
             alt="Customized Web Banners"
             className="object-cover w-full h-full"
           />
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
-            <div className="p-3 max-w-lg text-center">
-              <h4 className="text-light text-uppercase font-weight-medium mb-3 text-white text-lg">
-                Customized Web Banners
-              </h4>
-              <Link to='/cards' className="btn bg-white text-black py-2 px-3 rounded shadow">
-                Shop Now
-              </Link>
-            </div>
-          </div>
         </div>
       </Carousel>
     </div>

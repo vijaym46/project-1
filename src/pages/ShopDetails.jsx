@@ -205,7 +205,7 @@ const ShopDetails = () => {
             <h1 className='text-3xl font-semibold'>You May Also Like</h1>
             <p className='w-10 h-[1.5px] bg-black'></p>
           </div>
-          <ProductSlide />
+          <ProductSlide />  {/* --- Same comp(Error-1) Work fine here --- */}
         </div>
   
       </div>
