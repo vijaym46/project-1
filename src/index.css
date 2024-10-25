@@ -31,4 +31,12 @@
     }
 }
 
-  
+.ourProduct-slide .slick-slide {
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .ourProduct-slide .slick-slide {
+        padding: 10px;
+    }
+}
