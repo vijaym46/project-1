@@ -25,7 +25,7 @@ const Navbar = () => {
         <form className='block bg-gray-50 text-center border border-gray-400 mx-3 items-center justify-center  w-2/3 custom-991:w-1/2 relative rounded-full'>
           <div className='relative flex'>
               <input className='w-full sm:w-11/12 px-4 py-2 bg-gray-50 outline-none rounded-full' type="text" placeholder='Search' />
-              <button className='absolute h-full right-1 top-1/2 -translate-y-1/2 px-4 hidden sm:block'>
+              <button className='absolute h-full right-1 top-1/2 -translate-y-1/2 px-2 md:px-4 sm:block'>
                   <CiSearch className='w-6 h-6'/>
               </button> 
           </div>

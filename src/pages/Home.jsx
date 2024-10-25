@@ -80,7 +80,7 @@ const Home = () => {
       <div className='px-5 md:px-10'>
         <div className='flex gap-3 items-center justify-center'>
           <p className='w-10 h-[1.5px] bg-black'></p>
-          <h1 className='text-3xl font-semibold'>Popular Products</h1>
+          <h1 className='text-3xl font-semibold whitespace-nowrap'>Popular Products</h1>
           <p className='w-10 h-[1.5px] bg-black'></p>
         </div>
         {/* <ProductSlide /> --- Error --- */}

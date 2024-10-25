@@ -6,13 +6,13 @@ export const quicklink = [
     },
     {
         id: 2,
-        title: 'Cards',
-        path: '/cards'
+        title: 'Shop',
+        path: '/shop'
     },
     {
         id: 3,
-        title: 'Shopping Cart',
-        path: '/shopping-card'
+        title: 'Shop Details',
+        path: '/shopdetails'
     },
     {
         id: 4,
