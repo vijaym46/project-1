@@ -48,12 +48,12 @@ const Shop = () => {
 
   return (
     <div>
-      <div className='w-full h-80 bg-indigo-50 flex flex-col items-center gap-y-4 justify-center'>
-        <h1 className='text-4xl font-semibold'>OUR SHOP</h1>
+      <div className='w-full h-72 sm:h-80 bg-indigo-50 flex flex-col items-center gap-y-2 sm:gap-y-4 justify-center'>
+        <h1 className='text-3xl sm:text-4xl font-semibold'>OUR SHOP</h1>
         <p><Link to={'/shop'} className='text-lg hover:underline text-orange-500'>Home</Link>&nbsp; - &nbsp;Shop</p>
       </div>
 
-      <div className='px-4 md:px-14 py-20 md:py-24 grid  grid-cols-1 lg:grid-cols-4 gap-8'>
+      <div className='px-4 md:px-14 py-8 md:py-24 grid  grid-cols-1 lg:grid-cols-4 gap-8'>
 
         {/* --- Printing Services Start --- */}
         <div className='lg:col-span-1'>
@@ -116,6 +116,7 @@ const Shop = () => {
           <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
             {products.map((product) => (
               <div key={product.id} >
+              <Link to='/shopdetails'>
                 <div>
                   <div
                     className='relative overflow-hidden bg-transparent border p-0 cursor-pointer'
@@ -143,6 +144,7 @@ const Shop = () => {
                     </button>
                   </div>
                 </div>
+                </Link>
               </div>
             ))}
           </div>

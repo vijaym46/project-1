@@ -47,8 +47,6 @@ const Home = () => {
       </div>
         
         
-        
-        
       <div className='hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 py-5 px-8 md:py-10 mt-10 w-full'>
 
         <div className='hidden sm:flex items-center sm:justify-center border px-5 py-5 mb-5'>

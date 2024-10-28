@@ -8,9 +8,9 @@ const LinkandMail = () => {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
 
-        <div className='mb-5'>
+        <div className='sm:mb-5'>
             <h5 className='text-2xl font-bold mb-4'>Quick Links</h5>
-            <div className='flex flex-col space-y-2'>
+            <div className='flex flex-col space-y-1 sm:space-y-2'>
             {quicklink.map((link) => {
                 return (
                 <div key={link.id} className='flex items-center hover:underline'>

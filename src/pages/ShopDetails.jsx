@@ -66,8 +66,8 @@ const ShopDetails = () => {
     return (
       /* form start */
       <div>
-      <section className='grid grid-cols-1 custom-991:grid-cols-2 w-full justify-center items-center py-6'>
-        <div className='max-w-[450px] sm:max-w-[500px] h-[400px] sm:h-[600px] w-full m-auto sm:border py-6 px-4 relative group'>
+      <section className='grid grid-cols-1 custom-991:grid-cols-2 w-full py-6'>
+        <div className='max-w-[450px] sm:max-w-[500px] h-[400px] sm:h-[600px] w-full mx-auto sm:border py-6 px-4 relative group'>
           <div
             style={{ backgroundImage: `url(${slides[currentIndex]})` }}
             className='w-full h-full bg-center bg-cover duration-500'
@@ -94,15 +94,13 @@ const ShopDetails = () => {
           <div className='max-w-[380px] sm:max-w-[500px] flex flex-col items-center justify-center w-full py-6'>
             <div className='flex w-full flex-col gap-3'>
               <h1 className='text-2xl sm:text-3xl font-semibold'>Book Marks</h1>
-              <div className='flex text-orange-400 gap-1'><FaStar /> <FaStar /> <FaStar /> <FaRegStarHalfStroke /> <FaRegStar /></div>
-              <h2 className='text-xl sm:text-2xl font-semibold py-2'>$10.00-150.00</h2>
-              <p className='text-gray-500 text-base sm:text-lg'>Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea.</p>
+              <div className='flex text-orange-400 text-[15px] gap-1'><FaStar /> <FaStar /> <FaStar /> <FaRegStarHalfStroke /> <FaRegStar /></div>
             </div>
           <div className="w-full py-6">
             <form>
             {/* Paper Type */}
               <div className="flex items-center justify-center mb-4">
-                <label htmlFor="paperType" className="block  w-[150px] text-left mr-5 text-gray-500 whitespace-nowrap font-semibold mb-2">
+                <label htmlFor="paperType" className="block  w-[200px] text-left mr-5 text-gray-500 whitespace-nowrap font-semibold mb-2">
                   Paper Type:
                 </label>
                 <select
@@ -118,7 +116,7 @@ const ShopDetails = () => {
   
             {/* Size */}
             <div className="flex items-center justify-center mb-4">
-              <label htmlFor="size" className="block w-[150px] text-left mr-5 text-gray-500 font-semibold mb-2">
+              <label htmlFor="size" className="block w-[200px] text-left mr-5 text-gray-500 font-semibold mb-2">
                 Size:
               </label>
               <select
@@ -132,9 +130,62 @@ const ShopDetails = () => {
               </select>
             </div>
   
+             {/* Ink Color */}
+             <div className="flex items-center justify-center mb-4">
+              <label htmlFor="tasselColor" className="block w-[200px] text-left mr-5 text-gray-500 whitespace-nowrap font-semibold mb-2">
+                Ink Color:
+              </label>
+              <select
+                id="tasselColor"
+                name="tasselColor"
+                value={formData.tasselColor}
+                onChange={handleChange}
+                className="block w-full p-2 border border-gray-300 rounded"
+              >
+                <option value="">Choose an option</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+              </select>
+            </div>
+
+            {/* Finish */}
+            <div className="flex items-center justify-center mb-4">
+              <label htmlFor="quantity" className="block w-[200px] text-left mr-5 text-gray-500 font-semibold mb-2">
+                Finish: 
+              </label>
+              <select
+                name="quantity"
+                value={formData.quantity}
+                onChange={handleChange}
+                className="block w-full p-2 border border-gray-300 rounded"
+              >
+                <option value="">Choose an option</option>
+                <option value="standard-finish">Standard Finish</option>
+                <option value="gloss-uv-finish">High gloss uv coating</option>
+              </select>
+            </div>
+
+            {/* Rounded corners */}
+            <div className="flex items-center justify-center mb-4">
+              <label htmlFor="quantity" className="block w-[200px] text-left mr-5 text-gray-500 font-semibold mb-2">
+                Rounded corners: 
+              </label>
+              <select
+                name="quantity"
+                value={formData.quantity}
+                onChange={handleChange}
+                className="block w-full p-2 border border-gray-300 rounded"
+              >
+                <option value="">Choose an option</option>
+                <option value="no-corner">No rounded corners</option>
+                <option value="1/8-inch-corner">Yes 1/8 inch radius</option>
+                <option value="3/8-inch-corner">Yes 3/8 inch radius</option>
+              </select>
+            </div>
             {/* Quantity */}
             <div className="flex items-center justify-center mb-4">
-              <label htmlFor="quantity" className="block w-[150px] text-left mr-5 text-gray-500 font-semibold mb-2">
+              <label htmlFor="quantity" className="block w-[200px] text-left mr-5 text-gray-500 font-semibold mb-2">
                 Quantity: 
               </label>
               <select
@@ -149,16 +200,14 @@ const ShopDetails = () => {
                 <option value="10">10</option>
               </select>
             </div>
-  
-            {/* Tassel Color */}
+            {/* Tassel color */}
             <div className="flex items-center justify-center mb-4">
-              <label htmlFor="tasselColor" className="block w-[150px] text-left mr-5 text-gray-500 whitespace-nowrap font-semibold mb-2">
-                Tassel Color:
+              <label htmlFor="quantity" className="block w-[200px] text-left mr-5 text-gray-500 font-semibold mb-2">
+                Tassel color: 
               </label>
               <select
-                id="tasselColor"
-                name="tasselColor"
-                value={formData.tasselColor}
+                name="quantity"
+                value={formData.quantity}
                 onChange={handleChange}
                 className="block w-full p-2 border border-gray-300 rounded"
               >
@@ -166,6 +215,23 @@ const ShopDetails = () => {
                 <option value="red">Red</option>
                 <option value="blue">Blue</option>
                 <option value="green">Green</option>
+              </select>
+            </div>
+            {/* Proof Options: */}
+            <div className="flex items-center justify-center mb-4">
+              <label htmlFor="quantity" className="block w-[200px] text-left mr-5 text-gray-500 font-semibold mb-2">
+                Proof Options:: 
+              </label>
+              <select
+                name="quantity"
+                value={formData.quantity}
+                onChange={handleChange}
+                className="block w-full p-2 border border-gray-300 rounded"
+              >
+                <option value="">Choose an option</option>
+                <option value="straight-production">Straight to production</option>
+                <option value="online-copy">online copy</option>
+                <option value="nextday-hardcopy">Nextday Hard copy</option>
               </select>
             </div>
   
@@ -192,7 +258,7 @@ const ShopDetails = () => {
               </div>
             </div>
   
-        </div>
+            </div>
           </div>
         </div>
       </section>

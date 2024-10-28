@@ -7,7 +7,7 @@ import { HiPrinter } from 'react-icons/hi'
 
 const ContactDetails = () => {
   return (
-    <div className='mb-5 text-gray-700'>
+    <div className='sm:mb-5 text-gray-700'>
         <Link to="/">
           <img
             src={logo}
