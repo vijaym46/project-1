@@ -106,7 +106,7 @@ export const navItems = [
             },
             {
                 title: 'Event Journal',
-                path: '/eventjournal'
+                path: '/event-journal'
             },
         ]
     },
