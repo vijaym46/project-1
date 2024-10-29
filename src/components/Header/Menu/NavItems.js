@@ -100,6 +100,14 @@ export const navItems = [
                 title: 'Website Designing',
                 path: '/website-designing'
             },
+            {
+                title: 'Flyers',
+                path: '/flyers'
+            },
+            {
+                title: 'Event Journal',
+                path: '/eventjournal'
+            },
         ]
     },
     {

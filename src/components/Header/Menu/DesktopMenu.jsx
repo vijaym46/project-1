@@ -64,7 +64,7 @@ const NewMenu = () => {
                     variants={subMenuAnimate}
                   >
                     <div 
-                      className={`grid gap-x-14 gap-y-4 ${
+                      className={`grid gap-x-12 gap-y-2 ${
                         item.gridCol === 3 ? 'grid-cols-3'
                         : item.gridCol === 2 ? 'grid-cols-2'
                         : 'grid-cols-1' 
@@ -72,7 +72,7 @@ const NewMenu = () => {
                     >
                       {item?.submenu?.map((submenu, i) => (
                         <div key={i}>
-                          <NavLink to={submenu?.path} className='hover:text-orange-400 duration-200'>
+                          <NavLink to={submenu?.path} className='px-2 py-1 rounded hover:text-orange-700 hover:bg-neutral-100 duration-200'>
                             {submenu?.title}
                           </NavLink>
                         </div>
