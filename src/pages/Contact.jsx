@@ -29,7 +29,7 @@ const Contact = () => {
               <input type="email" placeholder='Your Email' className='border border-neutral-300 rounded focus:shadow-[0_0_10px_-5px_rgba(0,0,0,0.5)] transition-shadow duration-200 focus:outline-none px-3 py-2 w-full'/>
               <input type="text" placeholder='Subject' className='border border-neutral-300 rounded focus:shadow-[0_0_10px_-5px_rgba(0,0,0,0.5)] transition-shadow duration-200 focus:outline-none px-3 py-2 w-full'/>
               <textarea name="message" placeholder='Message' className='h-44 border border-neutral-300 rounded focus:shadow-[0_0_10px_-5px_rgba(0,0,0,0.5)] transition-shadow duration-200 focus:outline-none px-3 py-2 w-full resize-none'></textarea>
-              <button className='my-auto px-4 py-2 bg-orange-400 text-neutral-600 hover:bg-orange-600 hover:text-white duration-200 rounded'>Send Message</button>
+              <button className='my-auto px-4 py-2 bg-orange-400 text-neutral-600 hover:bg-orange-600 hover:text-white duration-100 rounded'>Send Message</button>
             </form>
           </div>
 

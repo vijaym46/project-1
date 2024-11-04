@@ -48,6 +48,9 @@ const ProductSlide = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    pauseOnDotsHover: false,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />, 
     responsive: [

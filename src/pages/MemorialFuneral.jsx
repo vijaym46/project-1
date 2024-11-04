@@ -2,22 +2,47 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CiSearch } from 'react-icons/ci';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import product1 from '../assets/Product/product1.jpg'
-import product2 from '../assets/Product/product2.jpg'
 import { FaCartArrowDown, FaEye } from 'react-icons/fa'
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md';
+import { printingServices } from '../components/Helper/Helpers'
+import { GetCategoryImagesAPI } from '../serverApi/server'
+import { CONNECTION_REFUSED, memorialFuneralMenus } from '../components/Helper/Helpers'
 
-const Shop = () => {
-  const printingServices = [ 'Banners', 'Bookmarks', 'Book Printing', 'Brochures', 'Business Cards', 'Buttons', 'Calendars', 'Car Magnets', 'Canvas Printing & Giclee', 'Customized Greeting Cards', 'E-Journal', 'Event Journal', 'Flyers', 'Funeral Buttons', 'Journals', 'Logo Designing' ]
+const MemorialFuneral = ({ title, additionalName}) => {
+  console.log('title ---------------------------->: ', title)
+  console.log('additionalName ----------------->:', additionalName)
 
-  const products = [
-    { id: 1, img: product1, title: "Colorful Stylish Shirt", price: "$123.00", oldPrice: "$123.00" },
-    { id: 2, img: product2, title: "Colorful Stylish Shirt", price: "$123.00", oldPrice: "$123.00" },
-    { id: 3, img: product1, title: "Colorful Stylish Shirt", price: "$123.00", oldPrice: "$123.00" },
-    { id: 4, img: product2, title: "Colorful Stylish Shirt", price: "$123.00", oldPrice: "$123.00" },
-    { id: 5, img: product1, title: "Colorful Stylish Shirt", price: "$123.00", oldPrice: "$123.00" },
-    { id: 6, img: product2, title: "Colorful Stylish Shirt", price: "$123.00", oldPrice: "$123.00" },
-  ];
+  const [products, setProducts] = useState('')
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
+  const [showPopupRefused, setShowPopupRefused] = useState(false);
+  const [popupRefusedMessage, setPopupRefusedMessage] = useState('');
+
+  const GetOurProductsCategoryImages = async (additionalName) => {
+    console.log('memorialFuneralMenus', memorialFuneralMenus)
+    var category_menu = memorialFuneralMenus[additionalName];
+    console.log('category_menu', category_menu)
+    try {
+      const GetCategoryImagesApiResponse = await GetCategoryImagesAPI(category_menu);
+      console.log('GetCategoryImagesApiResponse', GetCategoryImagesApiResponse)
+      if (GetCategoryImagesApiResponse.status === 200 && GetCategoryImagesApiResponse.data && GetCategoryImagesApiResponse.data.category_serializer.length !== 0) {
+        console.log('GetCategoryImagesApiResponse.data.category_serializer', GetCategoryImagesApiResponse.data.category_serializer)
+        setProducts(GetCategoryImagesApiResponse.data.category_serializer);
+      } else {
+        setPopupMessage(GetCategoryImagesApiResponse.response.data.message);
+        setShowPopup(true);
+        setTimeout(() => setShowPopup(false), 2000);
+      }
+    } catch (error) {
+      setPopupRefusedMessage(CONNECTION_REFUSED);
+      setShowPopupRefused(true);
+      setTimeout(() => setShowPopupRefused(false), 2000);
+    }
+  };
+
+  useEffect(() => {
+    GetOurProductsCategoryImages(additionalName)
+  }, [additionalName]);
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -47,19 +72,17 @@ const Shop = () => {
 
   return (
     <div>
-      <div className='w-full h-72 sm:h-80 bg-indigo-50 flex flex-col items-center gap-y-2 sm:gap-y-4 justify-center'>
-        <h1 className='text-3xl sm:text-4xl font-semibold'>OUR SHOP</h1>
-        <p><Link to={'/shop'} className='text-lg hover:underline text-orange-500'>Home</Link>&nbsp; - &nbsp;Shop</p>
-      </div>
+      {/* <div className='w-full h-80 bg-indigo-50 flex flex-col items-center gap-y-4 justify-center'>
+        <h1 className='text-4xl font-semibold'>OUR SHOP</h1>
+      </div> */}
 
-      <div className='px-4 md:px-14 py-8 md:py-24 grid  grid-cols-1 lg:grid-cols-4 gap-8'>
+      <div className='px-4 md:px-14 py-20 md:py-24 grid  grid-cols-1 lg:grid-cols-4 gap-8'>
 
         {/* --- Printing Services Start --- */}
         <div className='lg:col-span-1'>
           <h1 className='text-xl font-semibold'>PRINTING SERVICES</h1>
           <div className='flex flex-col gap-y-[10px] mt-8'>
             {printingServices.map((pService) => {
-
               return (
                 <Link className='px-4 py-4 text-gray-800  border border-gray-300 bg-neutral-50 hover:border-opacity-0 hover:text-white hover:bg-orange-400'>{pService}</Link>
               )
@@ -99,7 +122,7 @@ const Shop = () => {
               </button>
               
               {dropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg">
+                <div className="absolute z-50 right-0 mt-2 w-48 bg-white border rounded shadow-lg">
                   <a className="block px-4 py-2 hover:bg-gray-200" href="#" onClick={() => setDropdownOpen(!dropdownOpen)}>Latest</a>
                   <a className="block px-4 py-2 hover:bg-gray-200" href="#" onClick={() => setDropdownOpen(!dropdownOpen)}>Popularity</a>
                   <a className="block px-4 py-2 hover:bg-gray-200" href="#" onClick={() => setDropdownOpen(!dropdownOpen)}>Best Rating</a>
@@ -113,9 +136,9 @@ const Shop = () => {
 
           {/* --- Product --- */}
           <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
-            {products.map((product) => (
-              <div key={product.id} >
-              <Link to='/shopdetails'>
+
+            { products&& products.map((product) => (
+              <Link to='/shopdetails' key={product.id} >
                 <div>
                   <div
                     className='relative overflow-hidden bg-transparent border p-0 cursor-pointer'
@@ -123,10 +146,10 @@ const Shop = () => {
                   >
                     <img 
                       className={`w-full transition-transform duration-500 ease-in-out hover:scale-125 ${isZoomed ? 'scale-125' : ''}`}
-                      src={product.img} alt={product.title} />
+                      src={product.image_file} alt={product.image_name} />
                   </div>
                   <div className="card-body border-l border-r text-center p-0 pt-4 pb-3">
-                    <h6 className="text-truncate mb-3">{product.title}</h6>
+                    <h6 className="text-truncate mb-3">{product.image_name.replace('.jpg', '').replace('.png', '')}</h6>
                     <div className="flex justify-center">
                       <h6>{product.price}</h6>
                       <h6 className="text-gray-500 ml-2 line-through">{product.oldPrice}</h6>
@@ -143,9 +166,9 @@ const Shop = () => {
                     </button>
                   </div>
                 </div>
-                </Link>
-              </div>
+              </Link>
             ))}
+
           </div>
 
 
@@ -171,4 +194,4 @@ const Shop = () => {
   )
 }
 
-export default Shop
+export default MemorialFuneral

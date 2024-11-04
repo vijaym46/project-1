@@ -30,7 +30,28 @@ const Template = () => {
     setIsZoomed(!isZoomed);
   };    
 
-  const ourProducts = [ ourProduct1, ourProduct2, ourProduct3, ourProduct4, ourProduct5 ]
+  const ourProducts = [ 
+    {
+      id: 1,
+      image: ourProduct1,
+    }, 
+    {
+      id: 2,
+      image: ourProduct2,
+    }, 
+    {
+      id: 3,
+      image: ourProduct3,
+    }, 
+    {
+      id: 4,
+      image: ourProduct4,
+    }, 
+    {
+      id: 5,
+      image: ourProduct5,
+    }, 
+  ]
 
   const settings = {
     dots: false,
@@ -39,7 +60,10 @@ const Template = () => {
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    pauseOnDotsHover: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -114,18 +138,20 @@ const Template = () => {
         <h1 className='text-2xl sm:text-4xl font-semibold whitespace-nowrap px-6 py-1 bg-[#EDF1FF]'>Our Other Products</h1>
         <p className='w-10 h-[2px] bg-black'></p>
       </div>
-      {/* --- Our Other Products end */}
-      <div className='px-5 pb-16 w-full'>
-        <div className="ourProduct-slide w-full mt-10">
+      
+      <div className='px-5 mb-16 w-full'>
+        <div className="ourProduct-slide w-[95%] mt-10">
           <Slider {...settings}>
             {ourProducts.map((ourProduct) => (
-              <div className='relative flex items-center justify-center border p-3 cursor-move'>
-                <img src={ourProduct} alt="ourProduct list" className='w-36'/>
+              <div key={ourProduct.i} className='relative flex items-center justify-center border p-3 cursor-move'>
+                <img src={ourProduct.image} alt="ourProduct list" className='w-32'/>
               </div>
-            ))}
+            ))} 
           </Slider>
         </div>
       </div>
+      {/* --- Our Other Products end */}
+
     </div>
   )
 }

@@ -54,12 +54,16 @@ const MobileMenu = () => {
               return(
                 <li key={id} className='w-11/12'>
                   <Link 
-                    className='flex font-semibold items-center justify-between p-4 hover:bg-black/5 rounded-md    relative'
-                    onClick={() => setClicked(isClicked ? null : i)}
+                    to={path}
+                    className='flex font-semibold items-center justify-between p-2 sm:p-4 hover:bg-black/5 rounded-md    relative'
+                    onClick={() => {
+                      setClicked(isClicked ? null : i)
+                      !hasSubMenu && toggleDrawer();
+                    }}
                   >
                     {title}
                     {hasSubMenu && (
-                      <IoIosArrowDown 
+                      <IoIosArrowDown
                         className={` ml-auto ${isClicked && 'rotate-180'} duration-200 `}
                       />) }
                   </Link>
@@ -69,7 +73,7 @@ const MobileMenu = () => {
                         initial='exit'
                         animate={isClicked ? 'enter' : 'exit'}
                         variants={subMenuDrawer}
-                      className='ml-5'>
+                        className='ml-5'>
                         {
                           submenu?.map(({title, path}) => (
                             <li
@@ -88,14 +92,18 @@ const MobileMenu = () => {
             })
           }
         </ul>
-        <ul className='flex flex-col text-gray-700 w-11/12'>
-          <Link onClick={toggleDrawer} to='/login' className='pt-3 pb-4 px-5 font-medium hover:bg-black/5'>
-            <p>Login</p>
+        {/* <ul className='flex md:hidden flex-col text-gray-700 w-11/12'>
+          <Link onClick={toggleDrawer} to='/login' className='p-2 sm:p-4 font-medium hover:bg-black/5'>
+            <p>Login & Register</p>
           </Link>
-          <Link onClick={toggleDrawer} to='/register' className='pt-3 pb-4 px-5 font-medium hover:bg-black/5'>
-            <p>Register</p>
-          </Link>
-        </ul>
+        </ul> */}
+        <div className='p-2 sm:p-4'>
+            <Link to='/faq' onClick={toggleDrawer} className='font-light text-gray-800'>FAQs</Link>
+            <span className='font-light px-2'>|</span>
+            <Link onClick={toggleDrawer} className='font-light text-gray-800'>Help</Link>
+            <span className='font-light px-2'>|</span>
+            <Link onClick={toggleDrawer} className='font-light text-gray-800'>Support</Link>
+        </div>
       </motion.div>
     </div>
   )

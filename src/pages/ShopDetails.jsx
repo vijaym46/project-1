@@ -8,10 +8,17 @@ import { FaFacebookF, FaLinkedinIn, FaPinterest, FaRegStar, FaShoppingCart, FaSt
 import { FaRegStarHalfStroke, FaXTwitter } from 'react-icons/fa6';
 import DescriReview from '../components/ShopDetails/DescriReview';
 import ProductSlide from '../components/ShopDetails/ProductSlide';
+import { Link } from 'react-router-dom';
 
 const ShopDetails = () => {
     const slides = [product1, product2, product3, product4];
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const handleSignIn = () => {
+      setIsLoggedIn(true);
+  };
   
     const prevSlide = () => {
       const isFirstSlide = currentIndex === 0;
@@ -54,23 +61,24 @@ const ShopDetails = () => {
       calculateTotal();
     };
   
-    // Function to calculate total price (example logic)
     const calculateTotal = () => {
-      let basePrice = 5; // Example base price per item
+      let basePrice = 5; 
       let quantity = parseInt(formData.quantity || 0, 10);
       let total = basePrice * quantity;
-      setTotalPrice(total.toFixed(2)); // Set the total price with 2 decimal places
+      setTotalPrice(total.toFixed(2));
     };
   
   
     return (
       /* form start */
       <div>
-      <section className='grid grid-cols-1 custom-991:grid-cols-2 w-full py-6'>
-        <div className='max-w-[450px] sm:max-w-[500px] h-[400px] sm:h-[600px] w-full mx-auto sm:border py-6 px-4 relative group'>
+      <section className=' grid grid-cols-1 lg:grid-cols-2 w-full'>
+
+        {/* Grid col 1 */}
+        <div className='px-5 sm:px-8 py-6 h-[400px] sm:h-[600px] w-full relative group'>
           <div
             style={{ backgroundImage: `url(${slides[currentIndex]})` }}
-            className='w-full h-full bg-center bg-cover duration-500'
+            className='w-full h-full bg-center bg-cover duration-500 transition-transform'
           ></div>
   
           {/* Left Arrow */}
@@ -89,9 +97,28 @@ const ShopDetails = () => {
             <BsChevronCompactRight size={30} />
           </div>
         </div>
-  
-        <div className='flex custom-991:block items-center px-4 justify-center'>
-          <div className='max-w-[380px] sm:max-w-[500px] flex flex-col items-center justify-center w-full py-6'>
+
+        {/* Login Page */}
+        {!isLoggedIn && (
+            <div className='py-2 sm:py-6 px-6 lg:px-0 lg:pr-10 w-full place-self-center lg:place-self-start'>
+                <form action="" className='flex flex-col bg-neutral-200 px-8 py-6'>
+                  <h2 className='mb-2'>SIGN IN TO PURCHASE:</h2>
+                  <label htmlFor="email" className='mb-1'>EMAIL<span className='text-red-800'>*</span></label>
+                  <input type="text" required className='mb-6 px-2 py-1 rounded focus:outline-none border'/>
+                  <label htmlFor="password" className='mb-1'>PASSWORD<span className='text-red-800'>*</span></label>
+                  <input type="password" required className='mb-3 px-2 py-1 rounded focus:outline-none border'/>
+                  <Link className='text-sm text-blue-900 font-medium'>FORGOT YOUR PASSWORD?</Link>
+                  <button type="button" onClick={handleSignIn} className='bg-orange-400 hover:bg-orange-600 duration-200 px-2 py-1 rounded mt-2'>
+                      SIGN IN
+                  </button>
+                </form>
+            </div>
+        )}
+
+        {/* Grid col 2 */}
+        {isLoggedIn && (
+        <div className=' flex custom-991:block px-4 py-2 sm:py-6'>
+          <div className='px-5 sm:px-10 flex flex-col items-center justify-center w-full'>
             <div className='flex w-full flex-col gap-3'>
               <h1 className='text-2xl sm:text-3xl font-semibold'>Book Marks</h1>
               <div className='flex text-orange-400 text-[15px] gap-1'><FaStar /> <FaStar /> <FaStar /> <FaRegStarHalfStroke /> <FaRegStar /></div>
@@ -261,6 +288,7 @@ const ShopDetails = () => {
             </div>
           </div>
         </div>
+        )}
       </section>
       {/* form end */}
   

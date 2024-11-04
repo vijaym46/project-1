@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { navItems } from './NavItems';
 import { IoIosArrowDown } from 'react-icons/io';
@@ -13,6 +13,30 @@ const NewMenu = () => {
   const toggleHoverMenu = (index) => {
     setHoverIndex(index);
   }
+
+  const dropdownRef = useRef(null);
+
+ /*  const handleToggle = (index) => {
+    if (hoverIndex === null) {
+      toggleHoverMenu(index);
+    } else {
+      toggleHoverMenu(null);
+    }
+  }
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setHoverIndex(null);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [handleToggle]); */
 
   const subMenuAnimate =  {
     enter: {
@@ -34,9 +58,9 @@ const NewMenu = () => {
   }
 
   return (
-    <div className=' w-full px-5 sm:px-[3vw]'>
+    <div className='w-full px-5 sm:px-[3vw]'>
       <nav className='hidden custom-991:flex justify-between '>
-        <ul className='flex'>
+        <ul className='flex justify-center w-full'>
           {navItems.map((item, index) => {
             const hasSubMenu = item?.submenu?.length > 0;
 
@@ -44,15 +68,17 @@ const NewMenu = () => {
               <motion.li 
                 onHoverStart={() => toggleHoverMenu(index)}
                 onHoverEnd={() => toggleHoverMenu(null)}
+                /* onClick={() => handleToggle(index)} */
+                ref={dropdownRef}
                 key={item.id}
                 className='group/link'
               >
-                <Link to={item.path} onClick={() => setHorizLine(index)} className='SelectedOne group flex items-center gap-[2px] px-[1vw] duration-200 py-4 hover:bg-orange-200'>
-                  <div className='flex flex-col whitespace-nowrap items-center gap-1'>
+                <Link to={item.path} onClick={() => setHorizLine(index)} className='SelectedOne group h-full flex items-center gap-[2px] px-2 [@media(min-width:1130px)]:px-[1vw] duration-200 py-2 [@media(min-width:1130px)]:py-4 hover:bg-orange-200'>
+                  <div className='flex flex-col justify-center items-center text-center gap-1'>
                     {item.title}
                     <hr className={`${horizLine === index ? 'opacity-100' : 'opacity-0'} w-2/4 activeLine border-none h-[1px] bg-gray-600`}/>
                   </div>
-                  <div className='flex justify-center'>
+                  <div className='flex justify-start'>
                     {hasSubMenu && <IoIosArrowDown className='group-hover/link:rotate-180 duration-200 text-black'/>}
                   </div>
                 </Link>
@@ -71,7 +97,7 @@ const NewMenu = () => {
                       }`}
                     >
                       {item?.submenu?.map((submenu, i) => (
-                        <div key={i}>
+                        <div key={i} className='flex flex-col justify-center'>
                           <NavLink to={submenu?.path} className='px-2 py-1 rounded hover:text-orange-700 hover:bg-neutral-100 duration-200'>
                             {submenu?.title}
                           </NavLink>
@@ -83,14 +109,6 @@ const NewMenu = () => {
               </motion.li>
             );
           })}
-        </ul>
-        <ul className='flex text-gray-700'>
-          <NavLink to='/login' className='hover:bg-orange-200 pt-3 pb-4 px-[1vw] font-medium'>
-            <p className='mt-1'>Login</p>
-          </NavLink>
-          <NavLink to='/register' className='hover:bg-orange-200 pt-3 pb-4 px-[1vw] font-medium'>
-            <p className='mt-1'>Register</p>
-          </NavLink>
         </ul>
       </nav>
       <div className='custom-991:hidden'> 

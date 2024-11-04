@@ -11,11 +11,11 @@ import Template from '../components/Home/Template'
 
 const Home = () => {
   return (
-    <div className='flex flex-col items-center justify-center'>
-      <Slide />
+    <div className='w-full flex flex-col items-center'>
+      <Slide/>
 
       {/* serives start */}
-      <div className='grid sm:hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 py-5 px-8 md:py-10 mt-10 w-full'>
+      <div className='grid mt-8 sm:hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 py-5 px-8 md:py-10 w-full'>
 
         <div className='flex items-center sm:justify-center border pl-5 sm:pl-0 sm:px-10 py-5 mb-5'>
           <div className='w-12 sm:w-16'>

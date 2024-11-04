@@ -16,17 +16,25 @@ import Signs from '../pages/Services/Signs'
 import WebDesigning from '../pages/Services/WebDesigning'
 import Flyers from '../pages/Services/Flyers'
 import EventJournal from '../pages/Services/EventJournal'
+import FAQ from '../pages/FAQ'
+import MemorialFuneral from '../pages/MemorialFuneral'
+import { navItems } from '../components/Header/Menu/NavItems'
+import Register from '../pages/Register'
+import MyOrders from '../pages/MyOrders'
 
 function RoutesConfig () {
+  const memorialSubmenu = navItems.find(item => item.title === 'Memorial/Funeral')?.submenu || [];
   return (
     <Routes>
       <Route path='/' element={<Home/>} />
-      <Route path='/shop' element={<Shop/>} />
+      <Route path='/MemorialFuneral' element={<MemorialFuneral />} />
       <Route path='/shopdetails' element={<ShopDetails/>} />
       <Route path='/about' element={<About/>} />
       <Route path='/contact' element={<Contact/>} />
       <Route path='/login' element={<Login/>} />
+      <Route path='/register' element={<Register/>} />
       <Route path='/cart' element={<Cart/>} />
+      <Route path='/myorders' element={<MyOrders/>} />
       <Route path='/digitaloffset' element={<DigitOffset/>} />
       <Route path='/documentscan' element={<DocumentScan/>} />
       <Route path='/photography' element={<Photography/>} />
@@ -36,6 +44,14 @@ function RoutesConfig () {
       <Route path='/website-designing' element={<WebDesigning/>} />
       <Route path='/flyers' element={<Flyers/>} />
       <Route path='/event-journal' element={<EventJournal/>} />
+      <Route path='/faq' element={<FAQ/>} />
+      {memorialSubmenu.map(item => (
+        <Route
+          key={item.id}
+          path={item.path}
+          element={<MemorialFuneral title={item.title} additionalName={item.additionalName} />}
+        />
+      ))}
     </Routes>
   )
 }

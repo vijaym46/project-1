@@ -5,193 +5,394 @@ export const navItems = [
         path: '/'
     },
     {
-        id: 5,
-        title: 'Shop',
-        path: '/shop'
-    },
-    {
-        id: 2,
-        title: 'ShopDetails',
-        path: '/shopdetails'
-    },
-    {
         id:3,
         title: 'Memorial/Funeral',
         path: 'memorialfuneral',
         gridCol: 3,
         submenu: [
-          {
-            title: 'Bookmarks',
-            path: '/bookmarks'
-          },  
-          {
-            title: 'Funeral Buttons',
-            path: '/funeral-buttons'
-          },
-          {
-            title: 'Mask',
-            path: '/mask'
-          },
-          {
-            title: 'Memorial Collages',
-            path: '/memorial-collages'
-          },
-          {
-            title: 'Memorial Posters',
-            path: '/memorial-posters'
-          },
-          {
-            title: 'Memorial T-Shirts',
-            path: '/memorial-t-shirts'
-          },
-          {
-            title: 'Prayer Cards',
-            path: '/prayer-cards'
-          },
-          {
-            title: 'Photo Restoration',
-            path: '/photo-restoration'
-          },
-          {
-            title: 'Thankyou Cards',
-            path: '/thankyou-cards'
-          },
-          {
-            title: 'Obituaries',
-            path:  '/obituaries'
-          },
-          {
-            title: 'Obituary Booklets',
-            path: '/obituary-booklets'
-          }
-        ]
-    },
-    {
-        id: 4,
-        title: 'Servies',
-        path: 'services',
-        gridCol: 3,
-        submenu: [
             {
-                title: 'Digital & Offset Printing',
-                path: '/digitaloffset'
+                title: 'Bookmarks',
+                additionalName: 'bookMarks',
+                path: '/bookmarks'
             },
             {
-                title: 'Document Scanning',
-                path: '/documentscan'
+                title: 'Memorial College ',
+                additionalName: 'memorialCollege',
+                path: '/memorial-collages'
             },
             {
-                title: 'Photography',
-                path: '/photography'
+                title: 'Prayer Cards',
+                additionalName: 'prayerCards',
+                path: '/prayer-cards'
             },
             {
-                title: 'Photo Restoration',
-                path: '/photo-restoration'
+                title: 'Memorial Posters',
+                additionalName: 'memorialPosters',
+                path: '/memorial-posters'
             },
             {
-                title: 'Church Directory',
-                path: '/church-directory'
+                title: 'Funeral Button',
+                additionalName: 'funeralButton',
+                path: '/funeral-button'
             },
             {
-                title: 'Signs',
-                path: '/signs'
+                title: 'Masks',
+                additionalName: 'masks',
+                path: '/masks'
             },
             {
-                title: 'Website Designing',
-                path: '/website-designing'
+                title: 'memorial t-shirt',
+                additionalName: 'memorialTShirt',
+                path: '/memorial-t-shirt'
             },
             {
-                title: 'Flyers',
-                path: '/flyers'
+                title: 'Thankyou Cards',
+                additionalName: 'thankyouCards',
+                path: '/thank-you-cards'
             },
             {
-                title: 'Event Journal',
-                path: '/event-journal'
-            },
-        ]
-    },
-    {
-        id: 6,
-        title: 'Celebrations',
-        path: '/celebrations',
-        gridCol: 1,
-        submenu: [
-            {
-                title: '1st Anniversary',
-                path:'/anniversary'
+                title: 'Gatefold',
+                additionalName: 'gateFold',
+                path: '/gatefold'
             },
             {
-                title: '3rd Anniversary',
-                path:'/anniversary3'
+                title: 'Gatefold Booklet',
+                additionalName: 'gateFoldBooklet',
+                path: '/gatefold-booklet'
+            },
+            {
+                title: 'Graduated Step Small',
+                additionalName: 'graduatedStepSmall',
+                path: '/graduated-step-small'
+            },
+            {
+                title: 'Index Small',
+                additionalName: 'indexSmall',
+                path: '/index-small'
+            },
+            {
+                title: 'Obituary Large 3 Panel',
+                additionalName: 'obituaryLargePanel',
+                path: '/obituary-large-panel'
+            },
+            {
+                title: 'Obituary Large Booklets',
+                additionalName: 'obituaryLargeBooklets',
+                path: '/obituary-large-booklets'
+            },
+            {
+                title: 'Obituary Large Singlefold',
+                additionalName: 'obituaryLargeSinglefold',
+                path: '/obituary-large-singlefold'
+            },
+            {
+                title: 'Obituary Small 3 Panel',
+                additionalName: 'obituarySmallPanel',
+                path: '/obituary-small-panel'
+            },
+            {
+                title: 'Obituary Small Booklets',
+                additionalName: 'obituarySmallBooklets',
+                path: '/obituary-small-booklets'
+            },
+            {
+                title: 'Obituary Small Singlefold',
+                additionalName: 'obituarySmallSinglefold',
+                path: '/obituary-small-singlefold'
             },
         ]
     },
     {
-        id: 7,
-        title: 'About Us',
-        path: '/about'
+      id:3,
+      title: 'Marketing Essentials',
+      gridCol: 3,
+      submenu: [
+        {
+          title: 'Booklets',
+          path: '/booklets'
+        },
+        {
+          title: 'Bookmarks',
+          path: '/bookmarks'
+        },
+        {
+          title: 'Brouchers',
+          path: '/brouchers'
+        },
+        {
+          title: 'Buckslips',
+          path: '/buckslips'
+        },
+        {
+          title: 'Catalogs',
+          path: '/catalogs'
+        },
+        {
+          title: 'Mail Postcards',
+          path: '/mail-postcards'
+        },
+        {
+          title: 'Flyers',
+          path: '/flyers'
+        },
+        {
+          title: 'Gift Certificate',
+          path: '/gift-certificate'
+        },
+        {
+          title: 'Menus',
+          path: '/menus'
+        },
+        {
+          title: 'Newsletters',
+          path:  '/newsletters'
+        },
+        {
+          title: 'Rip Cards',
+          path: '/rip-cards'
+        },
+        {
+          title: 'Sales Sheet',
+          path: '/sales-sheet'
+        },
+        {
+          title: 'Raffle Book',
+          path: '/raffle-book'
+        },
+        {
+          title: 'Calender',
+          path: '/calender'
+        },
+        {
+          title: 'Event Journal',
+          path: '/event-journal'
+        },
+        {
+          title: 'Journals',
+          path: '/journals'
+        },
+      ]
     },
     {
-        id: 8,
-        title: 'Contact Us',
-        path: '/contact'
+      id:4,
+      title: 'Bussiness Cards',
+      gridCol: 3,
+      submenu: [
+        {
+          title: 'Appointment Cards',
+          path: '/appointment-cards'
+        },
+        {
+          title: 'Bussiness Cards',
+          path: '/bussiness-card'
+        },
+        {
+          title: 'Carbonless Forms',
+          path: '/carbonless-forms'
+        },
+        {
+          title: 'Envelopes',
+          path: '/envelopes'
+        },
+        {
+          title: 'Letterheads',
+          path: '/letterheads'
+        },
+        {
+          title: 'Notepad',
+          path: '/notepad'
+        },
+        {
+          title: 'Pocket Folders',
+          path: '/pocket-folders'
+        },
+        {
+          title: 'Postcards',
+          path: '/postcards'
+        },
+        {
+          title: 'Rubber Stamps',
+          path: '/rubber-stamps'
+        },
+        {
+          title: 'Sales Sheet',
+          path:  '/sales-sheet'
+        },
+        {
+          title: 'Shipping and Mailing Labels',
+          path: '/shipping_mailing-labels'
+        },
+        {
+          title: 'Tickets',
+          path: '/tickets'
+        },
+        {
+          title: 'Photo Coffee Mug',
+          path: '/photo-coffee-mug'
+        },
+        {
+          title: 'NCR Form',
+          path: '/ncr-form'
+        },
+        {
+          title: 'Logo Designing',
+          path: '/logo-designing'
+        },
+        {
+          title: 'Greeting Cards',
+          path: '/greeting-cards'
+        },
+        {
+          title: 'Canvas Printing and Ginglee',
+          path: '/canvas-printing_ginglee'
+        },
+        {
+          title: 'Car Magnet',
+          path: '/car-magnet'
+        },
+      ]
+    },
+    {
+      id:5,
+      title: 'Stickers & Labels',
+      gridCol: 2,
+      submenu: [
+        {
+          title: 'Vinyl Bumber Sticker',
+          path: '/vinyl-bumber-sticker'
+        },
+        {
+          title: '3D Lenticular Labels',
+          path: '/3d-lenticular-labels'
+        },
+        {
+          title: 'Address Labels',
+          path: '/address-labels'
+        },
+        {
+          title: 'Any Shape Labels',
+          path: '/any-shape-labels'
+        },
+        {
+          title: 'Beer Labels',
+          path: '/beer-labels'
+        },
+        {
+          title: 'Beverage Labels',
+          path: '/beverage-labels'
+        },
+        {
+          title: 'Bottle Labels',
+          path: '/bottle-labels'
+        },
+        {
+          title: 'Canning Labels',
+          path: '/canning-labels'
+        },
+        {
+          title: 'Food Labels',
+          path: '/food-labels'
+        },
+        {
+          title: 'Metallic Stikers',
+          path:  '/metallic-stikers'
+        },
+        {
+          title: 'Packaging Labels',
+          path: '/packaging-labels'
+        },
+        {
+          title: 'Product Labels',
+          path: '/product-labels'
+        },
+        {
+          title: 'Roll Labels',
+          path: '/roll-labels'
+        },
+        {
+          title: 'Round Stickers',
+          path: '/round-stickers'
+        },
+        {
+          title: 'Shipping and Mailing Labels',
+          path: '/'
+        },
+        {
+          title: 'Warning Labels',
+          path: '/warning-labels'
+        },
+        {
+          title: 'Water Bottle labels',
+          path: '/water-bottle-labels'
+        },
+      ]
+    },
+    {
+      id: 6,
+      title: 'Servies',
+      gridCol: 2,
+      submenu: [
+          {
+              title: 'Digital & Offset Printing',
+              path: '/digitaloffset'
+          },
+          {
+              title: 'Document Scanning',
+              path: '/documentscan'
+          },
+          {
+              title: 'Photography',
+              path: '/photography'
+          },
+          {
+              title: 'Photo Restoration',
+              path: '/photo-restoration'
+          },
+          {
+              title: 'Church Directory',
+              path: '/church-directory'
+          },
+          {
+              title: 'Signs',
+              path: '/signs'
+          },
+          {
+              title: 'Website Designing',
+              path: '/website-designing'
+          },
+          {
+              title: 'Flyers',
+              path: '/flyers'
+          },
+          {
+              title: 'Event Journal',
+              path: '/event-journal'
+          },
+      ]
+    },
+    {
+      id: 7,
+      title: 'Celebrations',
+      gridCol: 1,
+      submenu: [
+          {
+              title: '1st Anniversary',
+              path:'/anniversary'
+          },
+          {
+              title: '3rd Anniversary',
+              path:'/anniversary3'
+          },
+      ]
+    },
+    {
+      id: 8,
+      title: 'About Us',
+      path: '/about'
+    },
+    {
+      id: 9,
+      title: 'Contact Us',
+      path: '/contact'
     },
 ];
-
-export const categoryDropdown = [
-    {
-        id: 1,
-        title: 'Bookmarks',
-        path: '/bookmarks'
-    },
-    {
-        id: 2,
-        title: 'Funeral Buttons',
-        path: '/funeral-buttons'
-    },
-    {
-        id: 3,
-        title: 'Mask',
-        path: '/funeral-mask'
-    },
-    {
-        id: 4,
-        title: 'Memorial Collages',
-        path: '/memorial-collages'
-    },
-    {
-        id: 5,
-        title: 'Memorial Posters',
-        path: '/memorial-posters'
-    },
-    {
-        id: 6,
-        title: 'Memorial T-Shirts',
-        path: '/memorial-t-shirts'
-    },
-    {
-        id: 7,
-        title: 'Prayer Cards',
-        path: '/prayer-cards'
-    },
-    {
-        id: 8,
-        title: 'Photo Restoration',
-        path: '/photo-restoration'
-    },
-    {
-        id: 9,
-        title: 'Thankyou Cards',
-        path: '/thank-you-cards'
-    },
-    {
-        id: 10,
-        title: 'Obituaries',
-        path: '/obituaries'
-    },
-    {
-        id: 11,
-        title: 'Obituary Booklets',
-        path: '/obituary-booklets'
-    },
-]

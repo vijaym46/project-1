@@ -3,7 +3,7 @@ import { navItems } from '../../components/Header/Menu/NavItems';
 import { Link } from 'react-router-dom';
 
 const PrintingService = () => {
-    const serviceMenu = navItems.find(service => service.id === 4)?.submenu || [];
+    const serviceMenu = navItems.find(service => service.id === 6)?.submenu || [];
 
   return (
       <div className='lg:col-span-1'>
@@ -12,7 +12,7 @@ const PrintingService = () => {
             {serviceMenu.map((Service) => {
 
             return (
-                <Link className='px-4 py-4 text-gray-800  border border-gray-300 bg-neutral-50 hover:border-opacity-0 hover:text-white hover:bg-orange-400' to={Service.path}>{Service.title}</Link>
+                <Link className='p-2 sm:px-4 sm:py-4 text-gray-800  border border-gray-300 bg-neutral-50 hover:border-opacity-0 hover:text-white hover:bg-orange-400' to={Service.path}>{Service.title}</Link>
             )
             })}
         </div>

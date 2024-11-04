@@ -7,7 +7,7 @@ const SocialMedia = () => {
   return (
     <div className='flex items-center justify-between py-2 px-6 sm:px-[2vw] md:px-[3vw] lg:px-[5vw] bg-socialbg'>
         <div className='hidden md:block'>
-            <Link className='font-light text-gray-800'>FAQs</Link>
+            <Link to='/faq' className='font-light text-gray-800'>FAQs</Link>
             <span className='font-light px-2'>|</span>
             <Link className='font-light text-gray-800'>Help</Link>
             <span className='font-light px-2'>|</span>
