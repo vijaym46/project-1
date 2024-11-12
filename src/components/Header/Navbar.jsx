@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/Stalbanslogo.png';
 import { Link } from 'react-router-dom';
 import SocialMedia from './SocialMedia';
 import { CiSearch } from 'react-icons/ci';
@@ -18,7 +18,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="brand-logo"
-            className="w-32 sm:w-36 cursor-pointer"
+            className="w-32 sm:w-16 cursor-pointer"
           />
         </Link>
 

@@ -41,7 +41,7 @@ export const navItems = [
                 path: '/masks'
             },
             {
-                title: 'memorial t-shirt',
+                title: 'Memorial T-shirt',
                 additionalName: 'memorialTShirt',
                 path: '/memorial-t-shirt'
             },
@@ -329,7 +329,7 @@ export const navItems = [
     },
     {
       id: 6,
-      title: 'Servies',
+      title: 'Services',
       gridCol: 2,
       submenu: [
           {

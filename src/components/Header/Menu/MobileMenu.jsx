@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { IoIosArrowDown, IoIosMenu } from 'react-icons/io';
 import { IoClose } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo.svg'
+import logo from '../../../assets/Stalbanslogo.png'
 import { navItems } from './NavItems';
 import { motion } from 'framer-motion';
 

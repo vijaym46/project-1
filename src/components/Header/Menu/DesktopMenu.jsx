@@ -16,28 +16,6 @@ const NewMenu = () => {
 
   const dropdownRef = useRef(null);
 
- /*  const handleToggle = (index) => {
-    if (hoverIndex === null) {
-      toggleHoverMenu(index);
-    } else {
-      toggleHoverMenu(null);
-    }
-  }
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setHoverIndex(null);
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [handleToggle]); */
-
   const subMenuAnimate =  {
     enter: {
       opacity: 1,
@@ -57,6 +35,14 @@ const NewMenu = () => {
     }
   }
 
+  const [clickedIndex, setClickedIndex] = useState(null);
+
+  const handleToggle = (index) => {
+    const newIndex = clickedIndex === index ? null : index;
+    setClickedIndex(newIndex);
+    toggleHoverMenu(newIndex);
+  };
+
   return (
     <div className='w-full px-5 sm:px-[3vw]'>
       <nav className='hidden custom-991:flex justify-between '>
@@ -69,6 +55,7 @@ const NewMenu = () => {
                 onHoverStart={() => toggleHoverMenu(index)}
                 onHoverEnd={() => toggleHoverMenu(null)}
                 /* onClick={() => handleToggle(index)} */
+                onClick={() => handleToggle(index)}
                 ref={dropdownRef}
                 key={item.id}
                 className='group/link'
@@ -88,6 +75,7 @@ const NewMenu = () => {
                     initial='exit'
                     animate={hoverIndex === index ? 'enter' : 'exit'}
                     variants={subMenuAnimate}
+                    onClick={() => setHorizLine(index)}
                   >
                     <div 
                       className={`grid gap-x-12 gap-y-2 ${

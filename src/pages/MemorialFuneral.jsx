@@ -4,8 +4,8 @@ import { CiSearch } from 'react-icons/ci';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { FaCartArrowDown, FaEye } from 'react-icons/fa'
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md';
-import { printingServices } from '../components/Helper/Helpers'
 import { GetCategoryImagesAPI } from '../serverApi/server'
+import { printingServices } from '../components/Helper/Helpers'
 import { CONNECTION_REFUSED, memorialFuneralMenus } from '../components/Helper/Helpers'
 
 const MemorialFuneral = ({ title, additionalName}) => {
@@ -76,7 +76,7 @@ const MemorialFuneral = ({ title, additionalName}) => {
         <h1 className='text-4xl font-semibold'>OUR SHOP</h1>
       </div> */}
 
-      <div className='px-4 md:px-14 py-20 md:py-24 grid  grid-cols-1 lg:grid-cols-4 gap-8'>
+      <div className='px-4 md:px-14 py-5 md:py-24 grid grid-cols-1 lg:grid-cols-4 gap-8'>
 
         {/* --- Printing Services Start --- */}
         <div className='lg:col-span-1'>
@@ -135,17 +135,18 @@ const MemorialFuneral = ({ title, additionalName}) => {
           
 
           {/* --- Product --- */}
-          <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+          <div className='mt-10 grid grid-cols-1 min-[535px]:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-10'>
 
-            { products&& products.map((product) => (
-              <Link to='/shopdetails' key={product.id} >
-                <div>
+            { products && products.map((product) => (
+              // <Link to={`/login/?productId=${product.id}`} key={product.id} >
+              <Link to={`/shopdetails/${product.id}`} key={product.id} >
+                <div className='h-2/5 md:h-auto'>
                   <div
-                    className='relative overflow-hidden bg-transparent border p-0 cursor-pointer'
+                    className='relative md:h-auto overflow-hidden flex justify-center bg-transparent border cursor-pointer'
                     onClick={() => handleImageClick}
                   >
-                    <img 
-                      className={`w-full transition-transform duration-500 ease-in-out hover:scale-125 ${isZoomed ? 'scale-125' : ''}`}
+                    <img
+                      className={`w-40 md:w-full h-full transition-transform duration-500 ease-in-out hover:scale-125 ${isZoomed ? 'scale-125' : ''}`}
                       src={product.image_file} alt={product.image_name} />
                   </div>
                   <div className="card-body border-l border-r text-center p-0 pt-4 pb-3">

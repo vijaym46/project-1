@@ -29,7 +29,8 @@ const Slide = () => {
         pagination={{
           dynamicBullets: true,
         }}
-        navigation={false}
+        slide
+        navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >

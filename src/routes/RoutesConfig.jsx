@@ -6,7 +6,6 @@ import Contact from '../pages/Contact'
 import Login from '../pages/Login'
 import Cart from '../pages/Cart'
 import ShopDetails from '../pages/ShopDetails'
-import Shop from '../pages/Shop'
 import DigitOffset from '../pages/Services/DigitOffset'
 import DocumentScan from '../pages/Services/DocumentScan'
 import Photography from '../pages/Services/Photography'
@@ -21,6 +20,11 @@ import MemorialFuneral from '../pages/MemorialFuneral'
 import { navItems } from '../components/Header/Menu/NavItems'
 import Register from '../pages/Register'
 import MyOrders from '../pages/MyOrders'
+import AdminLogin from '../pages/Admin/AdminLogin'
+import Dashboard from '../pages/Admin/Dashboard'
+import CategoryPricing from '../pages/Admin/CategoryPricing'
+import SubCategoyPrice from '../pages/Admin/SubCategoyPrice'
+
 
 function RoutesConfig () {
   const memorialSubmenu = navItems.find(item => item.title === 'Memorial/Funeral')?.submenu || [];
@@ -28,11 +32,11 @@ function RoutesConfig () {
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/MemorialFuneral' element={<MemorialFuneral />} />
-      <Route path='/shopdetails' element={<ShopDetails/>} />
+      <Route path='/shopdetails/:id?' element={<ShopDetails/>} />
       <Route path='/about' element={<About/>} />
       <Route path='/contact' element={<Contact/>} />
-      <Route path='/login' element={<Login/>} />
-      <Route path='/register' element={<Register/>} />
+      <Route path='/login/:id?' element={<Login/>} />
+      <Route path='/register/:id?' element={<Register/>} />
       <Route path='/cart' element={<Cart/>} />
       <Route path='/myorders' element={<MyOrders/>} />
       <Route path='/digitaloffset' element={<DigitOffset/>} />
@@ -52,6 +56,13 @@ function RoutesConfig () {
           element={<MemorialFuneral title={item.title} additionalName={item.additionalName} />}
         />
       ))}
+
+      {/* Admin Page Routing */}
+      <Route path='/admin' element={<AdminLogin />} />
+      <Route path='/admin/dashboard' element={<Dashboard />} />
+      <Route path='/admin/category_pricing' element={<CategoryPricing />} />
+      <Route path='/admin/sub_category_pricing' element={<SubCategoyPrice />} />
+    
     </Routes>
   )
 }
